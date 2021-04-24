@@ -1,0 +1,43 @@
+<resources>
+    <string name="title">Litrit</string>
+    <string name="app_name">Litrit</string>
+    <string name="language_name">marathi</string>
+
+    <!-- Logger Strings -->
+    <string name="logger_map">muppetymapmarathi.dat</string>
+    <string name="logger_language">marathi</string>
+    <string name="subtype_mr_IN">Marathi (IN)</string>
+
+    <!-- Marathi -->
+    <!-- English Language specific changes fragment -->
+    <string name="welcome_instruction">Welcome. If you are unable to see the following Marathi text, then your device is unfortunately not supported.</string>
+    <string name="enable_step_1">1) In the next screen, enable \"Litrit\"</string>
+    <string name="default_step_1">In the next screen, select \"Litrit\"</string>
+    <!-- Welcome fragment -->
+    <string name="marathi_welcome_instruction">Welcome! This keyboard is a work in progress. Kindly bear with me and help in improving it.</string>
+    <string name="marathi_welcome_title">क्या आपका फोन इस वाक्य को हिंदी में प्रदर्शित कर रहा है?</string>
+    <!-- Enable Fragment -->
+    <string name="marathi_enable_instructions_head">कीबोर्ड का उपयोग शुरू करने के लिए, इसे सक्षम करने और डिफ़ॉल्ट बनाने की आवश्यकता है।</string>
+    <string name="marathi_enable_step_1">१) अगली स्क्रीन में, \"Litrit\" चुनें</string>
+    <string name="marathi_enable_step_2">२) फिर \"ओके\" दबाएं </string>
+    <string name="marathi_enable_step_3">३) अंत में, अपने फोन पर \"बैक\" बटन दबाएं</string>
+    <!-- Default Fragment -->
+    <string name="marathi_default_instructions_head">कीबोर्ड को सफलतापूर्वक सक्षम किया गया है। अब इसे अपना डिफ़ॉल्ट कीबोर्ड बनाएं।</string>
+    <string name="marathi_default_step_1">अगली स्क्रीन में, \"Litrit\" चुनें</string>
+    <!-- Button Text -->
+    <string name="marathi_welcome_button">हाँ, आगे बढ़ें</string>
+    <string name="marathi_enable_button">Litrit सक्षम करें</string>
+    <string name="marathi_default_button">Litrit डिफ़ॉल्ट बनाएं</string>
+    <!-- Congrats fragment -->
+    <string name="marathi_congrats_instruction">कीबोर्ड उपयोग के लिए तैयार है</string>
+    <string name="marathi_congrats_title">धन्यवाद</string>
+    <string name="marathi_congrats_button">सेटिंग्ज</string>
+    <!-- Settings -->
+    <string name="marathi_menu_language">HIN</string>
+    <string name="marathi_settings_instruction">कीबोर्ड आकार</string>
+    <string name="marathi_settings_layout_big">छोटा</string>
+    <string name="marathi_settings_layout_small">बड़ा</string>
+    <string name="marathi_do_you_like">स्वरचक्र आवडलं का?</string>
+    <string name="marathi_rate_us">गूगल प्ले स्टोर वर रेटिंग देऊन आपला अभिप्राय कळवा.</string>
+
+</resources>

@@ -1,0 +1,1314 @@
+package ind.keyboard.language.english;
+
+import android.annotation.SuppressLint;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import ind.keyboard.language.Language;
+import ind.keyboard.litrit.KeyProperties;
+
+public class English extends Language
+{
+    public English()
+    {
+                name = "english";
+                nKeys = 106 ;
+                defaultBox = new String [] {};
+                halantExists = false;
+                halantEnd = 0;
+                /* myKey is the actual keyboard. It is an arraylist containing objects of keyProoerties type.
+                * Each KeyProperty object is a single key  */
+                myKey = new ArrayList<KeyProperties>(nKeys);
+
+                KeyProperties tempKey = new KeyProperties();
+                for (int i=0; i < nKeys; i++ )
+                {
+                    myKey.add(i, tempKey);
+                }
+                /* Key board is now being assigned values*/
+                KeyProperties myKey0 = new KeyProperties();
+                myKey0.code = 1;
+                myKey0.label = "q" ;
+                myKey0.showBox = false ;
+                myKey0.showCustomBox = false ;
+                myKey0.customBoxLayout = new String[] {} ;
+                myKey0.showIcon = true ;
+                myKey0.icon = "english_01_01_q";
+                myKey0.changeLayout = false ;
+                myKey0.layout = "";
+                myKey.set(0, myKey0);
+
+                KeyProperties myKey1 = new KeyProperties();
+                myKey1.code = 2;
+                myKey1.label = "w" ;
+                myKey1.showBox = false ;
+                myKey1.showCustomBox = false ;
+                myKey1.customBoxLayout = new String[] {} ;
+                myKey1.showIcon = true ;
+                myKey1.icon = "english_01_02_w";
+                myKey1.changeLayout = false ;
+                myKey1.layout = "";
+                myKey.set(1, myKey1);
+
+                KeyProperties myKey2 = new KeyProperties();
+                myKey2.code = 3;
+                myKey2.label = "e" ;
+                myKey2.showBox = false ;
+                myKey2.showCustomBox = false ;
+                myKey2.customBoxLayout = new String[] {} ;
+                myKey2.showIcon = true ;
+                myKey2.icon = "english_01_03_e";
+                myKey2.changeLayout = false ;
+                myKey2.layout = "";
+                myKey.set(2, myKey2);
+
+                KeyProperties myKey3 = new KeyProperties();
+                myKey3.code = 4;
+                myKey3.label = "r" ;
+                myKey3.showBox = false ;
+                myKey3.showCustomBox = false ;
+                myKey3.customBoxLayout = new String[] {} ;
+                myKey3.showIcon = true ;
+                myKey3.icon = "english_01_04_r";
+                myKey3.changeLayout = false ;
+                myKey3.layout = "";
+                myKey.set(3, myKey3);
+
+                KeyProperties myKey4 = new KeyProperties();
+                myKey4.code = 5;
+                myKey4.label = "t" ;
+                myKey4.showBox = false ;
+                myKey4.showCustomBox = false ;
+                myKey4.customBoxLayout = new String[] {} ;
+                myKey4.showIcon = true ;
+                myKey4.icon = "english_01_05_t";
+                myKey4.changeLayout = false ;
+                myKey4.layout = "";
+                myKey.set(4, myKey4);
+
+                KeyProperties myKey5 = new KeyProperties();
+                myKey5.code = 6;
+                myKey5.label = "y" ;
+                myKey5.showBox = false ;
+                myKey5.showCustomBox = false ;
+                myKey5.customBoxLayout = new String[] {} ;
+                myKey5.showIcon = true ;
+                myKey5.icon = "english_01_06_y";
+                myKey5.changeLayout = false ;
+                myKey5.layout = "";
+                myKey.set(5, myKey5);
+
+                KeyProperties myKey6 = new KeyProperties();
+                myKey6.code = 7;
+                myKey6.label = "u" ;
+                myKey6.showBox = false ;
+                myKey6.showCustomBox = false ;
+                myKey6.customBoxLayout = new String[] {} ;
+                myKey6.showIcon = true ;
+                myKey6.icon = "english_01_07_u";
+                myKey6.changeLayout = false ;
+                myKey6.layout = "";
+                myKey.set(6, myKey6);
+
+                KeyProperties myKey7 = new KeyProperties();
+                myKey7.code = 8;
+                myKey7.label = "i" ;
+                myKey7.showBox = false ;
+                myKey7.showCustomBox = false ;
+                myKey7.customBoxLayout = new String[] {} ;
+                myKey7.showIcon = true ;
+                myKey7.icon = "english_01_08_i";
+                myKey7.changeLayout = false ;
+                myKey7.layout = "";
+                myKey.set(7, myKey7);
+
+                KeyProperties myKey8 = new KeyProperties();
+                myKey8.code = 9;
+                myKey8.label = "o" ;
+                myKey8.showBox = false ;
+                myKey8.showCustomBox = false ;
+                myKey8.customBoxLayout = new String[] {} ;
+                myKey8.showIcon = true ;
+                myKey8.icon = "english_01_09_o";
+                myKey8.changeLayout = false ;
+                myKey8.layout = "";
+                myKey.set(8, myKey8);
+
+                KeyProperties myKey9 = new KeyProperties();
+                myKey9.code = 10;
+                myKey9.label = "p" ;
+                myKey9.showBox = false ;
+                myKey9.showCustomBox = false ;
+                myKey9.customBoxLayout = new String[] {} ;
+                myKey9.showIcon = true ;
+                myKey9.icon = "english_01_10_p";
+                myKey9.changeLayout = false ;
+                myKey9.layout = "";
+                myKey.set(9, myKey9);
+
+                KeyProperties myKey10 = new KeyProperties();
+                myKey10.code = 11;
+                myKey10.label = "a" ;
+                myKey10.showBox = false ;
+                myKey10.showCustomBox = false ;
+                myKey10.customBoxLayout = new String[] {} ;
+                myKey10.showIcon = true ;
+                myKey10.icon = "english_02_01_a";
+                myKey10.changeLayout = false ;
+                myKey10.layout = "";
+                myKey.set(10, myKey10);
+
+                KeyProperties myKey11 = new KeyProperties();
+                myKey11.code = 12;
+                myKey11.label = "s" ;
+                myKey11.showBox = false ;
+                myKey11.showCustomBox = false ;
+                myKey11.customBoxLayout = new String[] {} ;
+                myKey11.showIcon = true ;
+                myKey11.icon = "english_02_02_s";
+                myKey11.changeLayout = false ;
+                myKey11.layout = "";
+                myKey.set(11, myKey11);
+
+                KeyProperties myKey12 = new KeyProperties();
+                myKey12.code = 13;
+                myKey12.label = "d" ;
+                myKey12.showBox = false ;
+                myKey12.showCustomBox = false ;
+                myKey12.customBoxLayout = new String[] {} ;
+                myKey12.showIcon = true ;
+                myKey12.icon = "english_02_03_d";
+                myKey12.changeLayout = false ;
+                myKey12.layout = "";
+                myKey.set(12, myKey12);
+
+                KeyProperties myKey13 = new KeyProperties();
+                myKey13.code = 14;
+                myKey13.label = "f" ;
+                myKey13.showBox = false ;
+                myKey13.showCustomBox = false ;
+                myKey13.customBoxLayout = new String[] {} ;
+                myKey13.showIcon = true ;
+                myKey13.icon = "english_02_04_f";
+                myKey13.changeLayout = false ;
+                myKey13.layout = "";
+                myKey.set(13, myKey13);
+
+                KeyProperties myKey14 = new KeyProperties();
+                myKey14.code = 15;
+                myKey14.label = "g" ;
+                myKey14.showBox = false ;
+                myKey14.showCustomBox = false ;
+                myKey14.customBoxLayout = new String[] {} ;
+                myKey14.showIcon = true ;
+                myKey14.icon = "english_02_05_g";
+                myKey14.changeLayout = false ;
+                myKey14.layout = "";
+                myKey.set(14, myKey14);
+
+                KeyProperties myKey15 = new KeyProperties();
+                myKey15.code = 16;
+                myKey15.label = "h" ;
+                myKey15.showBox = false ;
+                myKey15.showCustomBox = false ;
+                myKey15.customBoxLayout = new String[] {} ;
+                myKey15.showIcon = true ;
+                myKey15.icon = "english_02_06_h";
+                myKey15.changeLayout = false ;
+                myKey15.layout = "";
+                myKey.set(15, myKey15);
+
+                KeyProperties myKey16 = new KeyProperties();
+                myKey16.code = 17;
+                myKey16.label = "j" ;
+                myKey16.showBox = false ;
+                myKey16.showCustomBox = false ;
+                myKey16.customBoxLayout = new String[] {} ;
+                myKey16.showIcon = true ;
+                myKey16.icon = "english_02_07_j";
+                myKey16.changeLayout = false ;
+                myKey16.layout = "";
+                myKey.set(16, myKey16);
+
+                KeyProperties myKey17 = new KeyProperties();
+                myKey17.code = 18;
+                myKey17.label = "k" ;
+                myKey17.showBox = false ;
+                myKey17.showCustomBox = false ;
+                myKey17.customBoxLayout = new String[] {} ;
+                myKey17.showIcon = true ;
+                myKey17.icon = "english_02_08_k";
+                myKey17.changeLayout = false ;
+                myKey17.layout = "";
+                myKey.set(17, myKey17);
+
+                KeyProperties myKey18 = new KeyProperties();
+                myKey18.code = 19;
+                myKey18.label = "l" ;
+                myKey18.showBox = false ;
+                myKey18.showCustomBox = false ;
+                myKey18.customBoxLayout = new String[] {} ;
+                myKey18.showIcon = true ;
+                myKey18.icon = "english_02_09_l";
+                myKey18.changeLayout = false ;
+                myKey18.layout = "";
+                myKey.set(18, myKey18);
+
+                KeyProperties myKey19 = new KeyProperties();
+                myKey19.code = 20;
+                myKey19.label = "z" ;
+                myKey19.showBox = false ;
+                myKey19.showCustomBox = false ;
+                myKey19.customBoxLayout = new String[] {} ;
+                myKey19.showIcon = true ;
+                myKey19.icon = "english_03_01_z";
+                myKey19.changeLayout = false ;
+                myKey19.layout = "";
+                myKey.set(19, myKey19);
+
+                KeyProperties myKey20 = new KeyProperties();
+                myKey20.code = 21;
+                myKey20.label = "x" ;
+                myKey20.showBox = false ;
+                myKey20.showCustomBox = false ;
+                myKey20.customBoxLayout = new String[] {} ;
+                myKey20.showIcon = true ;
+                myKey20.icon = "english_03_02_x";
+                myKey20.changeLayout = false ;
+                myKey20.layout = "";
+                myKey.set(20, myKey20);
+
+                KeyProperties myKey21 = new KeyProperties();
+                myKey21.code = 22;
+                myKey21.label = "c" ;
+                myKey21.showBox = false ;
+                myKey21.showCustomBox = false ;
+                myKey21.customBoxLayout = new String[] {} ;
+                myKey21.showIcon = true ;
+                myKey21.icon = "english_03_03_c";
+                myKey21.changeLayout = false ;
+                myKey21.layout = "";
+                myKey.set(21, myKey21);
+
+                KeyProperties myKey22 = new KeyProperties();
+                myKey22.code = 23;
+                myKey22.label = "v" ;
+                myKey22.showBox = false ;
+                myKey22.showCustomBox = false ;
+                myKey22.customBoxLayout = new String[] {} ;
+                myKey22.showIcon = true ;
+                myKey22.icon = "english_03_04_v";
+                myKey22.changeLayout = false ;
+                myKey22.layout = "";
+                myKey.set(22, myKey22);
+
+                KeyProperties myKey23 = new KeyProperties();
+                myKey23.code = 24;
+                myKey23.label = "b" ;
+                myKey23.showBox = false ;
+                myKey23.showCustomBox = false ;
+                myKey23.customBoxLayout = new String[] {} ;
+                myKey23.showIcon = true ;
+                myKey23.icon = "english_03_05_b";
+                myKey23.changeLayout = false ;
+                myKey23.layout = "";
+                myKey.set(23, myKey23);
+
+                KeyProperties myKey24 = new KeyProperties();
+                myKey24.code = 25;
+                myKey24.label = "n" ;
+                myKey24.showBox = false ;
+                myKey24.showCustomBox = false ;
+                myKey24.customBoxLayout = new String[] {} ;
+                myKey24.showIcon = true ;
+                myKey24.icon = "english_03_06_n";
+                myKey24.changeLayout = false ;
+                myKey24.layout = "";
+                myKey.set(24, myKey24);
+
+                KeyProperties myKey25 = new KeyProperties();
+                myKey25.code = 26;
+                myKey25.label = "m" ;
+                myKey25.showBox = false ;
+                myKey25.showCustomBox = false ;
+                myKey25.customBoxLayout = new String[] {} ;
+                myKey25.showIcon = true ;
+                myKey25.icon = "english_03_07_m";
+                myKey25.changeLayout = false ;
+                myKey25.layout = "";
+                myKey.set(25, myKey25);
+
+                KeyProperties myKey26 = new KeyProperties();
+                myKey26.code = 27;
+                myKey26.label = "Q" ;
+                myKey26.showBox = false ;
+                myKey26.showCustomBox = false ;
+                myKey26.customBoxLayout = new String[] {} ;
+                myKey26.showIcon = true ;
+                myKey26.icon = "shift_english_01_01_q";
+                myKey26.changeLayout = false ;
+                myKey26.layout = "";
+                myKey.set(26, myKey26);
+
+                KeyProperties myKey27 = new KeyProperties();
+                myKey27.code = 28;
+                myKey27.label = "W" ;
+                myKey27.showBox = false ;
+                myKey27.showCustomBox = false ;
+                myKey27.customBoxLayout = new String[] {} ;
+                myKey27.showIcon = true ;
+                myKey27.icon = "shift_english_01_02_w";
+                myKey27.changeLayout = false ;
+                myKey27.layout = "";
+                myKey.set(27, myKey27);
+
+                KeyProperties myKey28 = new KeyProperties();
+                myKey28.code = 29;
+                myKey28.label = "E" ;
+                myKey28.showBox = false ;
+                myKey28.showCustomBox = false ;
+                myKey28.customBoxLayout = new String[] {} ;
+                myKey28.showIcon = true ;
+                myKey28.icon = "shift_english_01_03_e";
+                myKey28.changeLayout = false ;
+                myKey28.layout = "";
+                myKey.set(28, myKey28);
+
+                KeyProperties myKey29 = new KeyProperties();
+                myKey29.code = 30;
+                myKey29.label = "R" ;
+                myKey29.showBox = false ;
+                myKey29.showCustomBox = false ;
+                myKey29.customBoxLayout = new String[] {} ;
+                myKey29.showIcon = true ;
+                myKey29.icon = "shift_english_01_04_r";
+                myKey29.changeLayout = false ;
+                myKey29.layout = "";
+                myKey.set(29, myKey29);
+
+                KeyProperties myKey30 = new KeyProperties();
+                myKey30.code = 31;
+                myKey30.label = "T" ;
+                myKey30.showBox = false ;
+                myKey30.showCustomBox = false ;
+                myKey30.customBoxLayout = new String[] {} ;
+                myKey30.showIcon = true ;
+                myKey30.icon = "shift_english_01_05_t";
+                myKey30.changeLayout = false ;
+                myKey30.layout = "";
+                myKey.set(30, myKey30);
+
+                KeyProperties myKey31 = new KeyProperties();
+                myKey31.code = 32;
+                myKey31.label = "Y" ;
+                myKey31.showBox = false ;
+                myKey31.showCustomBox = false ;
+                myKey31.customBoxLayout = new String[] {} ;
+                myKey31.showIcon = true ;
+                myKey31.icon = "shift_english_01_06_y";
+                myKey31.changeLayout = false ;
+                myKey31.layout = "";
+                myKey.set(31, myKey31);
+
+                KeyProperties myKey32 = new KeyProperties();
+                myKey32.code = 33;
+                myKey32.label = "U" ;
+                myKey32.showBox = false ;
+                myKey32.showCustomBox = false ;
+                myKey32.customBoxLayout = new String[] {} ;
+                myKey32.showIcon = true ;
+                myKey32.icon = "shift_english_01_07_u";
+                myKey32.changeLayout = false ;
+                myKey32.layout = "";
+                myKey.set(32, myKey32);
+
+                KeyProperties myKey33 = new KeyProperties();
+                myKey33.code = 34;
+                myKey33.label = "I" ;
+                myKey33.showBox = false ;
+                myKey33.showCustomBox = false ;
+                myKey33.customBoxLayout = new String[] {} ;
+                myKey33.showIcon = true ;
+                myKey33.icon = "shift_english_01_08_i";
+                myKey33.changeLayout = false ;
+                myKey33.layout = "";
+                myKey.set(33, myKey33);
+
+                KeyProperties myKey34 = new KeyProperties();
+                myKey34.code = 35;
+                myKey34.label = "O" ;
+                myKey34.showBox = false ;
+                myKey34.showCustomBox = false ;
+                myKey34.customBoxLayout = new String[] {} ;
+                myKey34.showIcon = true ;
+                myKey34.icon = "shift_english_01_09_o";
+                myKey34.changeLayout = false ;
+                myKey34.layout = "";
+                myKey.set(34, myKey34);
+
+                KeyProperties myKey35 = new KeyProperties();
+                myKey35.code = 36;
+                myKey35.label = "P" ;
+                myKey35.showBox = false ;
+                myKey35.showCustomBox = false ;
+                myKey35.customBoxLayout = new String[] {} ;
+                myKey35.showIcon = true ;
+                myKey35.icon = "shift_english_01_10_p";
+                myKey35.changeLayout = false ;
+                myKey35.layout = "";
+                myKey.set(35, myKey35);
+
+                KeyProperties myKey36 = new KeyProperties();
+                myKey36.code = 37;
+                myKey36.label = "A" ;
+                myKey36.showBox = false ;
+                myKey36.showCustomBox = false ;
+                myKey36.customBoxLayout = new String[] {} ;
+                myKey36.showIcon = true ;
+                myKey36.icon = "shift_english_02_01_a";
+                myKey36.changeLayout = false ;
+                myKey36.layout = "";
+                myKey.set(36, myKey36);
+
+                KeyProperties myKey37 = new KeyProperties();
+                myKey37.code = 38;
+                myKey37.label = "S" ;
+                myKey37.showBox = false ;
+                myKey37.showCustomBox = false ;
+                myKey37.customBoxLayout = new String[] {} ;
+                myKey37.showIcon = true ;
+                myKey37.icon = "shift_english_02_02_s";
+                myKey37.changeLayout = false ;
+                myKey37.layout = "";
+                myKey.set(37, myKey37);
+
+                KeyProperties myKey38 = new KeyProperties();
+                myKey38.code = 39;
+                myKey38.label = "D" ;
+                myKey38.showBox = false ;
+                myKey38.showCustomBox = false ;
+                myKey38.customBoxLayout = new String[] {} ;
+                myKey38.showIcon = true ;
+                myKey38.icon = "shift_english_02_03_d";
+                myKey38.changeLayout = false ;
+                myKey38.layout = "";
+                myKey.set(38, myKey38);
+
+                KeyProperties myKey39 = new KeyProperties();
+                myKey39.code = 40;
+                myKey39.label = "F" ;
+                myKey39.showBox = false ;
+                myKey39.showCustomBox = false ;
+                myKey39.customBoxLayout = new String[] {} ;
+                myKey39.showIcon = true ;
+                myKey39.icon = "shift_english_02_04_f";
+                myKey39.changeLayout = false ;
+                myKey39.layout = "";
+                myKey.set(39, myKey39);
+
+                KeyProperties myKey40 = new KeyProperties();
+                myKey40.code = 41;
+                myKey40.label = "G" ;
+                myKey40.showBox = false ;
+                myKey40.showCustomBox = false ;
+                myKey40.customBoxLayout = new String[] {} ;
+                myKey40.showIcon = true ;
+                myKey40.icon = "shift_english_02_05_g";
+                myKey40.changeLayout = false ;
+                myKey40.layout = "";
+                myKey.set(40, myKey40);
+
+                KeyProperties myKey41 = new KeyProperties();
+                myKey41.code = 42;
+                myKey41.label = "H" ;
+                myKey41.showBox = false ;
+                myKey41.showCustomBox = false ;
+                myKey41.customBoxLayout = new String[] {} ;
+                myKey41.showIcon = true ;
+                myKey41.icon = "shift_english_02_06_h";
+                myKey41.changeLayout = false ;
+                myKey41.layout = "";
+                myKey.set(41, myKey41);
+
+                KeyProperties myKey42 = new KeyProperties();
+                myKey42.code = 43;
+                myKey42.label = "J" ;
+                myKey42.showBox = false ;
+                myKey42.showCustomBox = false ;
+                myKey42.customBoxLayout = new String[] {} ;
+                myKey42.showIcon = true ;
+                myKey42.icon = "shift_english_02_07_j";
+                myKey42.changeLayout = false ;
+                myKey42.layout = "";
+                myKey.set(42, myKey42);
+
+                KeyProperties myKey43 = new KeyProperties();
+                myKey43.code = 44;
+                myKey43.label = "K" ;
+                myKey43.showBox = false ;
+                myKey43.showCustomBox = false ;
+                myKey43.customBoxLayout = new String[] {} ;
+                myKey43.showIcon = true ;
+                myKey43.icon = "shift_english_02_08_k";
+                myKey43.changeLayout = false ;
+                myKey43.layout = "";
+                myKey.set(43, myKey43);
+
+                KeyProperties myKey44 = new KeyProperties();
+                myKey44.code = 45;
+                myKey44.label = "L" ;
+                myKey44.showBox = false ;
+                myKey44.showCustomBox = false ;
+                myKey44.customBoxLayout = new String[] {} ;
+                myKey44.showIcon = true ;
+                myKey44.icon = "shift_english_02_09_l";
+                myKey44.changeLayout = false ;
+                myKey44.layout = "";
+                myKey.set(44, myKey44);
+
+                KeyProperties myKey45 = new KeyProperties();
+                myKey45.code = 46;
+                myKey45.label = "Z" ;
+                myKey45.showBox = false ;
+                myKey45.showCustomBox = false ;
+                myKey45.customBoxLayout = new String[] {} ;
+                myKey45.showIcon = true ;
+                myKey45.icon = "shift_english_03_01_z";
+                myKey45.changeLayout = false ;
+                myKey45.layout = "";
+                myKey.set(45, myKey45);
+
+                KeyProperties myKey46 = new KeyProperties();
+                myKey46.code = 47;
+                myKey46.label = "X" ;
+                myKey46.showBox = false ;
+                myKey46.showCustomBox = false ;
+                myKey46.customBoxLayout = new String[] {} ;
+                myKey46.showIcon = true ;
+                myKey46.icon = "shift_english_03_02_x";
+                myKey46.changeLayout = false ;
+                myKey46.layout = "";
+                myKey.set(46, myKey46);
+
+                KeyProperties myKey47 = new KeyProperties();
+                myKey47.code = 48;
+                myKey47.label = "C" ;
+                myKey47.showBox = false ;
+                myKey47.showCustomBox = false ;
+                myKey47.customBoxLayout = new String[] {} ;
+                myKey47.showIcon = true ;
+                myKey47.icon = "shift_english_03_03_c";
+                myKey47.changeLayout = false ;
+                myKey47.layout = "";
+                myKey.set(47, myKey47);
+
+                KeyProperties myKey48 = new KeyProperties();
+                myKey48.code = 49;
+                myKey48.label = "V" ;
+                myKey48.showBox = false ;
+                myKey48.showCustomBox = false ;
+                myKey48.customBoxLayout = new String[] {} ;
+                myKey48.showIcon = true ;
+                myKey48.icon = "shift_english_03_04_v";
+                myKey48.changeLayout = false ;
+                myKey48.layout = "";
+                myKey.set(48, myKey48);
+
+                KeyProperties myKey49 = new KeyProperties();
+                myKey49.code = 50;
+                myKey49.label = "B" ;
+                myKey49.showBox = false ;
+                myKey49.showCustomBox = false ;
+                myKey49.customBoxLayout = new String[] {} ;
+                myKey49.showIcon = true ;
+                myKey49.icon = "shift_english_03_05_b";
+                myKey49.changeLayout = false ;
+                myKey49.layout = "";
+                myKey.set(49, myKey49);
+
+                KeyProperties myKey50 = new KeyProperties();
+                myKey50.code = 51;
+                myKey50.label = "N" ;
+                myKey50.showBox = false ;
+                myKey50.showCustomBox = false ;
+                myKey50.customBoxLayout = new String[] {} ;
+                myKey50.showIcon = true ;
+                myKey50.icon = "shift_english_03_06_n";
+                myKey50.changeLayout = false ;
+                myKey50.layout = "";
+                myKey.set(50, myKey50);
+
+                KeyProperties myKey51 = new KeyProperties();
+                myKey51.code = 52;
+                myKey51.label = "M" ;
+                myKey51.showBox = false ;
+                myKey51.showCustomBox = false ;
+                myKey51.customBoxLayout = new String[] {} ;
+                myKey51.showIcon = true ;
+                myKey51.icon = "shift_english_03_07_m";
+                myKey51.changeLayout = false ;
+                myKey51.layout = "";
+                myKey.set(51, myKey51);
+
+                KeyProperties myKey52 = new KeyProperties();
+                myKey52.code = 53;
+                myKey52.label = "." ;
+                myKey52.showBox = false ;
+                myKey52.showCustomBox = false ;
+                myKey52.customBoxLayout = new String[] {} ;
+                myKey52.showIcon = true ;
+                myKey52.icon = "punctuate";
+                myKey52.changeLayout = false ;
+                myKey52.layout = "";
+                myKey.set(52, myKey52);
+
+                KeyProperties myKey53 = new KeyProperties();
+                myKey53.code = 54;
+                myKey53.label = "," ;
+                myKey53.showBox = false ;
+                myKey53.showCustomBox = false ;
+                myKey53.customBoxLayout = new String[] {} ;
+                myKey53.showIcon = false ;
+                myKey53.icon = "";
+                myKey53.changeLayout = false ;
+                myKey53.layout = "";
+                myKey.set(53, myKey53);
+
+                KeyProperties myKey54 = new KeyProperties();
+                myKey54.code = 55;
+                myKey54.label = "1" ;
+                myKey54.showBox = false ;
+                myKey54.showCustomBox = false ;
+                myKey54.customBoxLayout = new String[] {} ;
+                myKey54.showIcon = false ;
+                myKey54.icon = "";
+                myKey54.changeLayout = false ;
+                myKey54.layout = "";
+                myKey.set(54, myKey54);
+
+                KeyProperties myKey55 = new KeyProperties();
+                myKey55.code = 56;
+                myKey55.label = "2" ;
+                myKey55.showBox = false ;
+                myKey55.showCustomBox = false ;
+                myKey55.customBoxLayout = new String[] {} ;
+                myKey55.showIcon = false ;
+                myKey55.icon = "";
+                myKey55.changeLayout = false ;
+                myKey55.layout = "";
+                myKey.set(55, myKey55);
+
+                KeyProperties myKey56 = new KeyProperties();
+                myKey56.code = 57;
+                myKey56.label = "3" ;
+                myKey56.showBox = false ;
+                myKey56.showCustomBox = false ;
+                myKey56.customBoxLayout = new String[] {} ;
+                myKey56.showIcon = false ;
+                myKey56.icon = "";
+                myKey56.changeLayout = false ;
+                myKey56.layout = "";
+                myKey.set(56, myKey56);
+
+                KeyProperties myKey57 = new KeyProperties();
+                myKey57.code = 58;
+                myKey57.label = "4" ;
+                myKey57.showBox = false ;
+                myKey57.showCustomBox = false ;
+                myKey57.customBoxLayout = new String[] {} ;
+                myKey57.showIcon = false ;
+                myKey57.icon = "";
+                myKey57.changeLayout = false ;
+                myKey57.layout = "";
+                myKey.set(57, myKey57);
+
+                KeyProperties myKey58 = new KeyProperties();
+                myKey58.code = 59;
+                myKey58.label = "5" ;
+                myKey58.showBox = false ;
+                myKey58.showCustomBox = false ;
+                myKey58.customBoxLayout = new String[] {} ;
+                myKey58.showIcon = false ;
+                myKey58.icon = "";
+                myKey58.changeLayout = false ;
+                myKey58.layout = "";
+                myKey.set(58, myKey58);
+
+                KeyProperties myKey59 = new KeyProperties();
+                myKey59.code = 60;
+                myKey59.label = "6" ;
+                myKey59.showBox = false ;
+                myKey59.showCustomBox = false ;
+                myKey59.customBoxLayout = new String[] {} ;
+                myKey59.showIcon = false ;
+                myKey59.icon = "";
+                myKey59.changeLayout = false ;
+                myKey59.layout = "";
+                myKey.set(59, myKey59);
+
+                KeyProperties myKey60 = new KeyProperties();
+                myKey60.code = 61;
+                myKey60.label = "7" ;
+                myKey60.showBox = false ;
+                myKey60.showCustomBox = false ;
+                myKey60.customBoxLayout = new String[] {} ;
+                myKey60.showIcon = false ;
+                myKey60.icon = "";
+                myKey60.changeLayout = false ;
+                myKey60.layout = "";
+                myKey.set(60, myKey60);
+
+                KeyProperties myKey61 = new KeyProperties();
+                myKey61.code = 62;
+                myKey61.label = "8" ;
+                myKey61.showBox = false ;
+                myKey61.showCustomBox = false ;
+                myKey61.customBoxLayout = new String[] {} ;
+                myKey61.showIcon = false ;
+                myKey61.icon = "";
+                myKey61.changeLayout = false ;
+                myKey61.layout = "";
+                myKey.set(61, myKey61);
+
+                KeyProperties myKey62 = new KeyProperties();
+                myKey62.code = 63;
+                myKey62.label = "9" ;
+                myKey62.showBox = false ;
+                myKey62.showCustomBox = false ;
+                myKey62.customBoxLayout = new String[] {} ;
+                myKey62.showIcon = false ;
+                myKey62.icon = "";
+                myKey62.changeLayout = false ;
+                myKey62.layout = "";
+                myKey.set(62, myKey62);
+
+                KeyProperties myKey63 = new KeyProperties();
+                myKey63.code = 64;
+                myKey63.label = "0" ;
+                myKey63.showBox = false ;
+                myKey63.showCustomBox = false ;
+                myKey63.customBoxLayout = new String[] {} ;
+                myKey63.showIcon = false ;
+                myKey63.icon = "";
+                myKey63.changeLayout = false ;
+                myKey63.layout = "";
+                myKey.set(63, myKey63);
+
+                KeyProperties myKey64 = new KeyProperties();
+                myKey64.code = 65;
+                myKey64.label = "@" ;
+                myKey64.showBox = false ;
+                myKey64.showCustomBox = false ;
+                myKey64.customBoxLayout = new String[] {} ;
+                myKey64.showIcon = false ;
+                myKey64.icon = "";
+                myKey64.changeLayout = false ;
+                myKey64.layout = "";
+                myKey.set(64, myKey64);
+
+                KeyProperties myKey65 = new KeyProperties();
+                myKey65.code = 66;
+                myKey65.label = "#" ;
+                myKey65.showBox = false ;
+                myKey65.showCustomBox = false ;
+                myKey65.customBoxLayout = new String[] {} ;
+                myKey65.showIcon = false ;
+                myKey65.icon = "";
+                myKey65.changeLayout = false ;
+                myKey65.layout = "";
+                myKey.set(65, myKey65);
+
+                KeyProperties myKey66 = new KeyProperties();
+                myKey66.code = 67;
+                myKey66.label = "$" ;
+                myKey66.showBox = false ;
+                myKey66.showCustomBox = false ;
+                myKey66.customBoxLayout = new String[] {} ;
+                myKey66.showIcon = false ;
+                myKey66.icon = "";
+                myKey66.changeLayout = false ;
+                myKey66.layout = "";
+                myKey.set(66, myKey66);
+
+                KeyProperties myKey67 = new KeyProperties();
+                myKey67.code = 68;
+                myKey67.label = "%" ;
+                myKey67.showBox = false ;
+                myKey67.showCustomBox = false ;
+                myKey67.customBoxLayout = new String[] {} ;
+                myKey67.showIcon = false ;
+                myKey67.icon = "";
+                myKey67.changeLayout = false ;
+                myKey67.layout = "";
+                myKey.set(67, myKey67);
+
+                KeyProperties myKey68 = new KeyProperties();
+                myKey68.code = 69;
+                myKey68.label = "&" ;
+                myKey68.showBox = false ;
+                myKey68.showCustomBox = false ;
+                myKey68.customBoxLayout = new String[] {} ;
+                myKey68.showIcon = false ;
+                myKey68.icon = "";
+                myKey68.changeLayout = false ;
+                myKey68.layout = "";
+                myKey.set(68, myKey68);
+
+                KeyProperties myKey69 = new KeyProperties();
+                myKey69.code = 70;
+                myKey69.label = "-" ;
+                myKey69.showBox = false ;
+                myKey69.showCustomBox = false ;
+                myKey69.customBoxLayout = new String[] {} ;
+                myKey69.showIcon = false ;
+                myKey69.icon = "";
+                myKey69.changeLayout = false ;
+                myKey69.layout = "";
+                myKey.set(69, myKey69);
+
+                KeyProperties myKey70 = new KeyProperties();
+                myKey70.code = 71;
+                myKey70.label = "*" ;
+                myKey70.showBox = false ;
+                myKey70.showCustomBox = false ;
+                myKey70.customBoxLayout = new String[] {} ;
+                myKey70.showIcon = false ;
+                myKey70.icon = "";
+                myKey70.changeLayout = false ;
+                myKey70.layout = "";
+                myKey.set(70, myKey70);
+
+                KeyProperties myKey71 = new KeyProperties();
+                myKey71.code = 72;
+                myKey71.label = "(" ;
+                myKey71.showBox = false ;
+                myKey71.showCustomBox = false ;
+                myKey71.customBoxLayout = new String[] {} ;
+                myKey71.showIcon = false ;
+                myKey71.icon = "";
+                myKey71.changeLayout = false ;
+                myKey71.layout = "";
+                myKey.set(71, myKey71);
+
+                KeyProperties myKey72 = new KeyProperties();
+                myKey72.code = 73;
+                myKey72.label = ")" ;
+                myKey72.showBox = false ;
+                myKey72.showCustomBox = false ;
+                myKey72.customBoxLayout = new String[] {} ;
+                myKey72.showIcon = false ;
+                myKey72.icon = "";
+                myKey72.changeLayout = false ;
+                myKey72.layout = "";
+                myKey.set(72, myKey72);
+
+                KeyProperties myKey73 = new KeyProperties();
+                myKey73.code = 74;
+                myKey73.label = ":" ;
+                myKey73.showBox = false ;
+                myKey73.showCustomBox = false ;
+                myKey73.customBoxLayout = new String[] {} ;
+                myKey73.showIcon = false ;
+                myKey73.icon = "";
+                myKey73.changeLayout = false ;
+                myKey73.layout = "";
+                myKey.set(73, myKey73);
+
+                KeyProperties myKey74 = new KeyProperties();
+                myKey74.code = 75;
+                myKey74.label = "'" ;
+                myKey74.showBox = false ;
+                myKey74.showCustomBox = false ;
+                myKey74.customBoxLayout = new String[] {} ;
+                myKey74.showIcon = false ;
+                myKey74.icon = "";
+                myKey74.changeLayout = false ;
+                myKey74.layout = "";
+                myKey.set(74, myKey74);
+
+                KeyProperties myKey75 = new KeyProperties();
+                myKey75.code = 76;
+                myKey75.label = "\"" ;
+                myKey75.showBox = false ;
+                myKey75.showCustomBox = false ;
+                myKey75.customBoxLayout = new String[] {} ;
+                myKey75.showIcon = false ;
+                myKey75.icon = "";
+                myKey75.changeLayout = false ;
+                myKey75.layout = "";
+                myKey.set(75, myKey75);
+
+                KeyProperties myKey76 = new KeyProperties();
+                myKey76.code = 77;
+                myKey76.label = "/" ;
+                myKey76.showBox = false ;
+                myKey76.showCustomBox = false ;
+                myKey76.customBoxLayout = new String[] {} ;
+                myKey76.showIcon = false ;
+                myKey76.icon = "";
+                myKey76.changeLayout = false ;
+                myKey76.layout = "";
+                myKey.set(76, myKey76);
+
+                KeyProperties myKey77 = new KeyProperties();
+                myKey77.code = 78;
+                myKey77.label = "," ;
+                myKey77.showBox = false ;
+                myKey77.showCustomBox = false ;
+                myKey77.customBoxLayout = new String[] {} ;
+                myKey77.showIcon = false ;
+                myKey77.icon = "";
+                myKey77.changeLayout = false ;
+                myKey77.layout = "";
+                myKey.set(77, myKey77);
+
+                KeyProperties myKey78 = new KeyProperties();
+                myKey78.code = 79;
+                myKey78.label = "!" ;
+                myKey78.showBox = false ;
+                myKey78.showCustomBox = false ;
+                myKey78.customBoxLayout = new String[] {} ;
+                myKey78.showIcon = false ;
+                myKey78.icon = "";
+                myKey78.changeLayout = false ;
+                myKey78.layout = "";
+                myKey.set(78, myKey78);
+
+                KeyProperties myKey79 = new KeyProperties();
+                myKey79.code = 80;
+                myKey79.label = "?" ;
+                myKey79.showBox = false ;
+                myKey79.showCustomBox = false ;
+                myKey79.customBoxLayout = new String[] {} ;
+                myKey79.showIcon = false ;
+                myKey79.icon = "";
+                myKey79.changeLayout = false ;
+                myKey79.layout = "";
+                myKey.set(79, myKey79);
+
+                KeyProperties myKey80 = new KeyProperties();
+                myKey80.code = 81;
+                myKey80.label = "_" ;
+                myKey80.showBox = false ;
+                myKey80.showCustomBox = false ;
+                myKey80.customBoxLayout = new String[] {} ;
+                myKey80.showIcon = false ;
+                myKey80.icon = "";
+                myKey80.changeLayout = false ;
+                myKey80.layout = "";
+                myKey.set(80, myKey80);
+
+                KeyProperties myKey81 = new KeyProperties();
+                myKey81.code = 82;
+                myKey81.label = "+" ;
+                myKey81.showBox = false ;
+                myKey81.showCustomBox = false ;
+                myKey81.customBoxLayout = new String[] {} ;
+                myKey81.showIcon = false ;
+                myKey81.icon = "";
+                myKey81.changeLayout = false ;
+                myKey81.layout = "";
+                myKey.set(81, myKey81);
+
+                KeyProperties myKey82 = new KeyProperties();
+                myKey82.code = 83;
+                myKey82.label = "=" ;
+                myKey82.showBox = false ;
+                myKey82.showCustomBox = false ;
+                myKey82.customBoxLayout = new String[] {} ;
+                myKey82.showIcon = false ;
+                myKey82.icon = "";
+                myKey82.changeLayout = false ;
+                myKey82.layout = "";
+                myKey.set(82, myKey82);
+
+                KeyProperties myKey83 = new KeyProperties();
+                myKey83.code = 84;
+                myKey83.label = "`" ;
+                myKey83.showBox = false ;
+                myKey83.showCustomBox = false ;
+                myKey83.customBoxLayout = new String[] {} ;
+                myKey83.showIcon = false ;
+                myKey83.icon = "";
+                myKey83.changeLayout = false ;
+                myKey83.layout = "";
+                myKey.set(83, myKey83);
+
+                KeyProperties myKey84 = new KeyProperties();
+                myKey84.code = 85;
+                myKey84.label = ";" ;
+                myKey84.showBox = false ;
+                myKey84.showCustomBox = false ;
+                myKey84.customBoxLayout = new String[] {} ;
+                myKey84.showIcon = false ;
+                myKey84.icon = "";
+                myKey84.changeLayout = false ;
+                myKey84.layout = "";
+                myKey.set(84, myKey84);
+
+                KeyProperties myKey85 = new KeyProperties();
+                myKey85.code = 86;
+                myKey85.label = "|" ;
+                myKey85.showBox = false ;
+                myKey85.showCustomBox = false ;
+                myKey85.customBoxLayout = new String[] {} ;
+                myKey85.showIcon = false ;
+                myKey85.icon = "";
+                myKey85.changeLayout = false ;
+                myKey85.layout = "";
+                myKey.set(85, myKey85);
+
+                KeyProperties myKey86 = new KeyProperties();
+                myKey86.code = 87;
+                myKey86.label = "£" ;
+                myKey86.showBox = false ;
+                myKey86.showCustomBox = false ;
+                myKey86.customBoxLayout = new String[] {} ;
+                myKey86.showIcon = false ;
+                myKey86.icon = "";
+                myKey86.changeLayout = false ;
+                myKey86.layout = "";
+                myKey.set(86, myKey86);
+
+                KeyProperties myKey87 = new KeyProperties();
+                myKey87.code = 88;
+                myKey87.label = "€" ;
+                myKey87.showBox = false ;
+                myKey87.showCustomBox = false ;
+                myKey87.customBoxLayout = new String[] {} ;
+                myKey87.showIcon = false ;
+                myKey87.icon = "";
+                myKey87.changeLayout = false ;
+                myKey87.layout = "";
+                myKey.set(87, myKey87);
+
+                KeyProperties myKey88 = new KeyProperties();
+                myKey88.code = 89;
+                myKey88.label = "₹" ;
+                myKey88.showBox = false ;
+                myKey88.showCustomBox = false ;
+                myKey88.customBoxLayout = new String[] {} ;
+                myKey88.showIcon = false ;
+                myKey88.icon = "";
+                myKey88.changeLayout = false ;
+                myKey88.layout = "";
+                myKey.set(88, myKey88);
+
+                KeyProperties myKey89 = new KeyProperties();
+                myKey89.code = 90;
+                myKey89.label = "\\" ;
+                myKey89.showBox = false ;
+                myKey89.showCustomBox = false ;
+                myKey89.customBoxLayout = new String[] {} ;
+                myKey89.showIcon = false ;
+                myKey89.icon = "";
+                myKey89.changeLayout = false ;
+                myKey89.layout = "";
+                myKey.set(89, myKey89);
+
+                KeyProperties myKey90 = new KeyProperties();
+                myKey90.code = 91;
+                myKey90.label = "{" ;
+                myKey90.showBox = false ;
+                myKey90.showCustomBox = false ;
+                myKey90.customBoxLayout = new String[] {} ;
+                myKey90.showIcon = false ;
+                myKey90.icon = "";
+                myKey90.changeLayout = false ;
+                myKey90.layout = "";
+                myKey.set(90, myKey90);
+
+                KeyProperties myKey91 = new KeyProperties();
+                myKey91.code = 92;
+                myKey91.label = "}" ;
+                myKey91.showBox = false ;
+                myKey91.showCustomBox = false ;
+                myKey91.customBoxLayout = new String[] {} ;
+                myKey91.showIcon = false ;
+                myKey91.icon = "";
+                myKey91.changeLayout = false ;
+                myKey91.layout = "";
+                myKey.set(91, myKey91);
+
+                KeyProperties myKey92 = new KeyProperties();
+                myKey92.code = 93;
+                myKey92.label = "[" ;
+                myKey92.showBox = false ;
+                myKey92.showCustomBox = false ;
+                myKey92.customBoxLayout = new String[] {} ;
+                myKey92.showIcon = false ;
+                myKey92.icon = "";
+                myKey92.changeLayout = false ;
+                myKey92.layout = "";
+                myKey.set(92, myKey92);
+
+                KeyProperties myKey93 = new KeyProperties();
+                myKey93.code = 94;
+                myKey93.label = "]" ;
+                myKey93.showBox = false ;
+                myKey93.showCustomBox = false ;
+                myKey93.customBoxLayout = new String[] {} ;
+                myKey93.showIcon = false ;
+                myKey93.icon = "";
+                myKey93.changeLayout = false ;
+                myKey93.layout = "";
+                myKey.set(93, myKey93);
+
+                KeyProperties myKey94 = new KeyProperties();
+                myKey94.code = 95;
+                myKey94.label = "©" ;
+                myKey94.showBox = false ;
+                myKey94.showCustomBox = false ;
+                myKey94.customBoxLayout = new String[] {} ;
+                myKey94.showIcon = false ;
+                myKey94.icon = "";
+                myKey94.changeLayout = false ;
+                myKey94.layout = "";
+                myKey.set(94, myKey94);
+
+                KeyProperties myKey95 = new KeyProperties();
+                myKey95.code = 96;
+                myKey95.label = "®" ;
+                myKey95.showBox = false ;
+                myKey95.showCustomBox = false ;
+                myKey95.customBoxLayout = new String[] {} ;
+                myKey95.showIcon = false ;
+                myKey95.icon = "";
+                myKey95.changeLayout = false ;
+                myKey95.layout = "";
+                myKey.set(95, myKey95);
+
+                KeyProperties myKey96 = new KeyProperties();
+                myKey96.code = 97;
+                myKey96.label = "™" ;
+                myKey96.showBox = false ;
+                myKey96.showCustomBox = false ;
+                myKey96.customBoxLayout = new String[] {} ;
+                myKey96.showIcon = false ;
+                myKey96.icon = "";
+                myKey96.changeLayout = false ;
+                myKey96.layout = "";
+                myKey.set(96, myKey96);
+
+                KeyProperties myKey97 = new KeyProperties();
+                myKey97.code = 98;
+                myKey97.label = "<" ;
+                myKey97.showBox = false ;
+                myKey97.showCustomBox = false ;
+                myKey97.customBoxLayout = new String[] {} ;
+                myKey97.showIcon = false ;
+                myKey97.icon = "";
+                myKey97.changeLayout = false ;
+                myKey97.layout = "";
+                myKey.set(97, myKey97);
+
+                KeyProperties myKey98 = new KeyProperties();
+                myKey98.code = 99;
+                myKey98.label = ">" ;
+                myKey98.showBox = false ;
+                myKey98.showCustomBox = false ;
+                myKey98.customBoxLayout = new String[] {} ;
+                myKey98.showIcon = false ;
+                myKey98.icon = "";
+                myKey98.changeLayout = false ;
+                myKey98.layout = "";
+                myKey.set(98, myKey98);
+
+                KeyProperties myKey99 = new KeyProperties();
+                myKey99.code = 100;
+                myKey99.label = "^" ;
+                myKey99.showBox = false ;
+                myKey99.showCustomBox = false ;
+                myKey99.customBoxLayout = new String[] {} ;
+                myKey99.showIcon = false ;
+                myKey99.icon = "";
+                myKey99.changeLayout = false ;
+                myKey99.layout = "";
+                myKey.set(99, myKey99);
+
+                KeyProperties myKey100 = new KeyProperties();
+                myKey100.code = 101;
+                myKey100.label = "·" ;
+                myKey100.showBox = false ;
+                myKey100.showCustomBox = false ;
+                myKey100.customBoxLayout = new String[] {} ;
+                myKey100.showIcon = false ;
+                myKey100.icon = "";
+                myKey100.changeLayout = false ;
+                myKey100.layout = "";
+                myKey.set(100, myKey100);
+
+                KeyProperties myKey101 = new KeyProperties();
+                myKey101.code = 102;
+                myKey101.label = "~" ;
+                myKey101.showBox = false ;
+                myKey101.showCustomBox = false ;
+                myKey101.customBoxLayout = new String[] {} ;
+                myKey101.showIcon = false ;
+                myKey101.icon = "";
+                myKey101.changeLayout = false ;
+                myKey101.layout = "";
+                myKey.set(101, myKey101);
+
+                KeyProperties myKey102 = new KeyProperties();
+                myKey102.code = 103;
+                myKey102.label = ":" ;
+                myKey102.showBox = false ;
+                myKey102.showCustomBox = false ;
+                myKey102.customBoxLayout = new String[] {} ;
+                myKey102.showIcon = false ;
+                myKey102.icon = "";
+                myKey102.changeLayout = false ;
+                myKey102.layout = "";
+                myKey.set(102, myKey102);
+
+                KeyProperties myKey103 = new KeyProperties();
+                myKey103.code = 104;
+                myKey103.label = "," ;
+                myKey103.showBox = false ;
+                myKey103.showCustomBox = false ;
+                myKey103.customBoxLayout = new String[] {} ;
+                myKey103.showIcon = false ;
+                myKey103.icon = "";
+                myKey103.changeLayout = false ;
+                myKey103.layout = "";
+                myKey.set(103, myKey103);
+
+                KeyProperties myKey104 = new KeyProperties();
+                myKey104.code = 105;
+                myKey104.label = "!" ;
+                myKey104.showBox = false ;
+                myKey104.showCustomBox = false ;
+                myKey104.customBoxLayout = new String[] {} ;
+                myKey104.showIcon = false ;
+                myKey104.icon = "";
+                myKey104.changeLayout = false ;
+                myKey104.layout = "";
+                myKey.set(104, myKey104);
+
+                KeyProperties myKey105 = new KeyProperties();
+                myKey105.code = 106;
+                myKey105.label = "?" ;
+                myKey105.showBox = false ;
+                myKey105.showCustomBox = false ;
+                myKey105.customBoxLayout = new String[] {} ;
+                myKey105.showIcon = false ;
+                myKey105.icon = "";
+                myKey105.changeLayout = false ;
+                myKey105.layout = "";
+                myKey.set(105, myKey105);
+    }
+
+    @SuppressLint("UseSparseArrays")
+    public HashMap<Integer, KeyProperties> hashThis()
+    {
+        HashMap<Integer, KeyProperties> hashed = new HashMap<Integer, KeyProperties>();
+        for (int i=0; i<nKeys; i++)
+        {
+            KeyProperties key = myKey.get(i);
+            hashed.put(key.code, key);
+        }
+        return hashed;
+    }
+}
