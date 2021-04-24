@@ -352,11 +352,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                     changeLayout("default");
                 }
 
-               // KeyProperties key2 = mKeys.get(keyCode);
-
-               // if(SetKeys.getA() == 1)
-                //    commitText(key2.label);
-
                 isSpinePressed = false;
             }
 
@@ -572,7 +567,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             //  backspace();
             //  backspace();
 
-            if(keyCode == 30 || keyCode == 31 || (keyCode >= 107 && keyCode <=129))
+            if(keyCode == 30 || keyCode == 31 || keyCode == 52 || keyCode ==53 || (keyCode >= 107 && keyCode <=135))
                  changeLayout("default");
             SetKeys.setA(0);
         }
