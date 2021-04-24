@@ -271,9 +271,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             showBox = mKeys.get(keyCode).showBox && !(isChakraVisible);
             key = mKeys.get(keyCode);
 
-
-
-
             System.out.println("yooo"+keyCode+" "+key.label);
 
             if(keyCode >= 1 && keyCode <=25)
@@ -307,8 +304,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
                 int[] keycode = {108,2011,1,110,2012,6,115,2013,11,120,2014,16,125,2015,21};
 
-
-
                 for (int value : keycode)
                 {
                     if (value == keyCode)
@@ -341,7 +336,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                                 obj1.setKey();
 
                                 //if(SetKeys.getA() == 1)
-                                commitText(key1.label.toString()+"x");
+                                commitText(key1.label.toString());
 
                                 showPreview(keyCode, key1.label.toString());
                                 //flag1 =1;
@@ -381,10 +376,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
                     for(int i = 0; i < 15; i++)
                     {
-
                         if (code == keycode[i])
                         {
-
                             System.out.print(key1.label);
 
                            // key1.icon = SetKeys.getContext().getDrawable(R.drawable.shift);
@@ -499,23 +492,25 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             if(SetKeys.getA() == 1)
                 commitText(key.label);
 
+            if(SetKeys.getA() == 1)
+            {
+                if(keyCode == 30 || keyCode == 31 || keyCode == 53 || keyCode == 52 || (keyCode >= 107 && keyCode <=135))
+                {
+                    backspace();
+                    backspace();
+                }
+
+                if(keyCode == 107 || keyCode == 108 || keyCode == 109 || keyCode == 52 || keyCode == 53)
+                    backspace();
+            }
+
             if(key.changeLayout)
             {
                 changeLayout(key.layout);
             }
             else
             {
-                if(SetKeys.getA() == 1)
-                {
-                    if(keyCode == 30 || keyCode == 31 || (keyCode >= 107 && keyCode <=129))
-                    {
-                        backspace();
-                        backspace();
-                    }
 
-                    if(keyCode == 107 || keyCode == 108 || keyCode == 109 )
-                        backspace();
-                }
 
                 ShowDynamiconEditText(keyCode);
             }
@@ -742,7 +737,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                     }
                 }
                 mKeyboardView.invalidateAllKeys();*/
-
             }
             else
             {
@@ -752,7 +746,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
                 if(SetKeys.getA() == 1)
                 {
-
                     DigitalKeyboard obj = new DigitalKeyboard();
                     obj.SetShiftKey(clicked);
                 }
