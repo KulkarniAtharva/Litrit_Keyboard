@@ -350,7 +350,6 @@ public class DigitalKeyboard extends InputMethodService
 
                 KeyProperties key1 = mKeys.get(keyCode);
 
-
                 if (key.codes[0] == 130)
                     key.label = key1.label + "ँ";
                 if (key.codes[0] == 131)
