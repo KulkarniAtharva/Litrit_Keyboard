@@ -567,7 +567,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             //  backspace();
             //  backspace();
 
-            if(keyCode == 30 || keyCode == 31 || keyCode == 52 || keyCode ==53 || (keyCode >= 107 && keyCode <=135))
+            if(keyCode == 30 || keyCode == 31 || keyCode == 52 || keyCode == 53 || (keyCode >= 107 && keyCode <=135))
                  changeLayout("default");
             SetKeys.setA(0);
         }
