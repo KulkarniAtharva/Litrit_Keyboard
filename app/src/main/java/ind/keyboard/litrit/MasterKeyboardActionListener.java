@@ -216,7 +216,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             mKeyboardView.invalidateAllKeys();
         }*/
 
-        showPreview(key.codes[0],"a");
+      //  showPreview(key.codes[0],"a");
 
 
         if (key.codes[0] == SHIFT)
@@ -500,15 +500,9 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             }
 
             if(key.changeLayout)
-            {
                 changeLayout(key.layout);
-            }
             else
-            {
-
-
                 ShowDynamiconEditText(keyCode);
-            }
 
             temp = key.label;
         }
