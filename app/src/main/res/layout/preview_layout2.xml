@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:textColor="@android:color/white"
-    android:background="@drawable/english_key_preview_bg"
-    android:id="@+id/preview_text_view"
-    android:textSize="20sp"
-    android:textAlignment="center"
-    android:gravity="center"
-    />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal">
+
+        <TextView
+
+            android:textColor="@android:color/white"
+            android:background="@drawable/english_key_preview_bg"
+            android:id="@+id/preview_text_view1"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:gravity="center" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:background="@drawable/english_key_preview_bg"
+            android:id="@+id/preview_text_view2"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:gravity="center" />
+
+</LinearLayout>

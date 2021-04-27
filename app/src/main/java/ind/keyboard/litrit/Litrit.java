@@ -107,22 +107,23 @@ public class Litrit extends View
 
     public void setMetrics(int mode)
     {
-        switch(mode)
+        //switch(mode)
         {
-            case 0:
+            //case 0:
                 mOuterRadius = (float) (0.28*Math.min(screen_width, screen_height));
-                break;
-            case 1:
-                mOuterRadius = (float) (0.28*Math.min(screen_width, screen_height));
-            default:
+               // break;
+           // case 1:
+          //      mOuterRadius = (float) (0.28*Math.min(screen_width, screen_height));
+           // default:
 //			0.25 & 0.17
-                break;
+             //   break;
         }
         mInnerRadius = (float) (0.32*mOuterRadius);
         mShadowRadius = (float) (1.01*mOuterRadius);
         mArcTextPaint.setTextSize((float) 0.18*mOuterRadius);
         mInnerTextPaint.setTextSize((float) 0.18*mOuterRadius);
         mArcTextRadius = (float) (0.64*mOuterRadius);
+        //bound = new Rect
         bound = new RectF(mOuterRadius,mOuterRadius,3*mOuterRadius, 3*mOuterRadius);
         centerX = bound.centerX();
         centerY = bound.centerY();
@@ -185,32 +186,71 @@ public class Litrit extends View
     }
 
     //  no
-    @SuppressLint("NewApi")
+    /*@SuppressLint("NewApi")
     @Override
     protected void onDraw(Canvas canvas)
     {
         super.onDraw(canvas);
 
-        canvas.drawCircle(centerX, centerY, mShadowRadius, mShadowPaint);
+       // canvas.drawRect(centerX,centerY,centerX+10,centerX+20,mShadowPaint);
 
-        canvas.drawCircle(centerX, centerY, mOuterRadius, mBlackPaint);
+
+
+       // canvas.drawCircle(centerX, centerY, mShadowRadius, mShadowPaint);
+
+       // canvas.drawCircle(centerX, centerY, mOuterRadius, mBlackPaint);
 
         float anglePerArc = (float) (360.0/nArcs);
         Paint arcPaint;
-        for(int i =0; i< nArcs; i++)
+        for(int i =0; i< 2; i++)
         {
             arcPaint = mArcPaint;
             if(i == arc)
                 arcPaint = mArcPrevPaint;
 
             //arcs
-            canvas.drawArc(bound, getMidAngle(i) - anglePerArc/2, anglePerArc-1, true, arcPaint);
+           // canvas.drawArc(bound, getMidAngle(i) - anglePerArc/2, anglePerArc-1, true, arcPaint);
+            canvas.drawRect(centerX+30,centerX+30,centerX+100,centerX+202,arcPaint);
 
             //arc seperators
             canvas.drawArc(bound, getMidAngle(i) + anglePerArc/2 -1, 1, true, mArcDividerPaint);
         }
 
-        canvas.drawCircle(centerX, centerY, mInnerRadius, mInnerPaint);
+      //  canvas.drawCircle(centerX, centerY, mInnerRadius, mInnerPaint);
+        drawLetters(canvas);
+    }*/
+
+    @SuppressLint("NewApi")
+    @Override
+    protected void onDraw(Canvas canvas)
+    {
+        super.onDraw(canvas);
+
+        // canvas.drawRect(centerX,centerY,centerX+10,centerX+20,mShadowPaint);
+
+
+
+        // canvas.drawCircle(centerX, centerY, mShadowRadius, mShadowPaint);
+
+        // canvas.drawCircle(centerX, centerY, mOuterRadius, mBlackPaint);
+
+        float anglePerArc = (float) (360.0/nArcs);
+        Paint arcPaint;
+        for(int i =0; i< 2; i++)
+        {
+            arcPaint = mArcPaint;
+            if(i == arc)
+                arcPaint = mArcPrevPaint;
+
+            //arcs
+            // canvas.drawArc(bound, getMidAngle(i) - anglePerArc/2, anglePerArc-1, true, arcPaint);
+            canvas.drawRect(centerX+10,centerX-100,centerX-200,centerX-302,mArcDividerPaint);
+
+            //arc seperators
+            canvas.drawArc(bound, getMidAngle(i) + anglePerArc/2 -1, 1, true, mArcDividerPaint);
+        }
+
+        //  canvas.drawCircle(centerX, centerY, mInnerRadius, mInnerPaint);
         drawLetters(canvas);
     }
 
@@ -225,7 +265,7 @@ public class Litrit extends View
 
        // output();
 
-        for(int i = 0; i<nArcs; i++)
+        for(int i = 0; i<2; i++)
         {
             PointF textPos = getArcTextPoint(i);
             canvas.drawText(getTextForArc(i), textPos.x, textPos.y, mArcTextPaint);

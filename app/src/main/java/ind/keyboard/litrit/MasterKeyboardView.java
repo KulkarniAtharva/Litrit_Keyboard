@@ -30,6 +30,8 @@ public class MasterKeyboardView extends CustomKeyboard
 
     public PopupWindow mPreviewPopup;
     public TextView mPreviewTextView;
+    public PopupWindow mPreviewPopup2;
+    public TextView mPreviewTextView2;
 
     public MasterKeyboardView(Context context, AttributeSet attrs)
     {
@@ -82,6 +84,18 @@ public class MasterKeyboardView extends CustomKeyboard
         mPreviewPopup.setTouchable(false);
         mPreviewPopup.setBackgroundDrawable(null);
         mPreviewPopup.setClippingEnabled(false);
+
+
+      /*  mPreviewPopup2 = new PopupWindow();
+        LayoutInflater inflater2 = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v2 = inflater2.inflate(R.layout.preview_layout2, null);
+        mPreviewTextView2 = (TextView) v2.findViewById(R.id.preview_text_view1);
+        mPreviewTextView2.setVisibility(View.GONE);
+
+        mPreviewPopup2.setContentView(v2);
+        mPreviewPopup2.setTouchable(false);
+        mPreviewPopup2.setBackgroundDrawable(null);
+        mPreviewPopup2.setClippingEnabled(false);  */
     }
 
     public static boolean isTablet(Context context)
