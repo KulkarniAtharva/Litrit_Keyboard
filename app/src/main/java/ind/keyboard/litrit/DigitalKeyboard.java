@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.Keyboard.Key;
@@ -16,18 +14,13 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.RelativeLayout;
 
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 import ind.keyboard.language.Language;
-import ind.keyboard.language.MasterLanguage;
+import ind.keyboard.language.MarathiLanguage;
 import ind.keyboard.language.english.English;
 
 import static ind.keyboard.litrit.SetKeys.keys;
@@ -45,7 +38,7 @@ public class DigitalKeyboard extends InputMethodService
     private HashMap<Integer, KeyProperties> mKeys;
     private HashMap<Integer, KeyProperties> mainKeys;
     private HashMap<Integer, KeyProperties> englishKeys;
-    private MasterLanguage mainLanguage;
+    private MarathiLanguage marathiLanguage;
     public String mainLanguageSymbol;
     private English english;
     private Language language;
@@ -84,7 +77,7 @@ public class DigitalKeyboard extends InputMethodService
        // if(a[0] == null)
        // {
         //    System.out.println("\u0905");
-            mainLanguage = new MasterLanguage();
+            marathiLanguage = new MarathiLanguage();
        // }
        // else
        // {
@@ -98,8 +91,8 @@ public class DigitalKeyboard extends InputMethodService
        // }
 
 
-        mainKeys = mainLanguage.hashThis();
-        mainLanguageSymbol = mainLanguage.symbol;
+        mainKeys = marathiLanguage.hashThis();
+        mainLanguageSymbol = marathiLanguage.symbol;
 
         english = new English();
         englishKeys = english.hashThis();
@@ -134,7 +127,6 @@ public class DigitalKeyboard extends InputMethodService
         mKeyboardView.setKeyboard(mKeyboard);
         mKeyboardView.init(this, language, mKeys);
         updateFullscreenMode();
-
 
         mKeyboardView.invalidateAllKeys();
 
@@ -235,8 +227,8 @@ public class DigitalKeyboard extends InputMethodService
     {
         List<Key> keys = new ArrayList<Key>();
        // List<Key> keys = mKeyboard.getKeys();
-        mainLanguage = new MasterLanguage();
-        mainKeys = mainLanguage.hashThis();
+        marathiLanguage = new MarathiLanguage();
+        mainKeys = marathiLanguage.hashThis();
         mKeys = mainKeys;
 
         keys = SetKeys.getKeys();
@@ -337,8 +329,8 @@ public class DigitalKeyboard extends InputMethodService
 
     void SetShiftKey(int keyCode)
     {
-        mainLanguage = new MasterLanguage();
-        mainKeys = mainLanguage.hashThis();
+        marathiLanguage = new MarathiLanguage();
+        mainKeys = marathiLanguage.hashThis();
         mKeys = mainKeys;
 
         for(Key key : keys)
@@ -407,9 +399,14 @@ public class DigitalKeyboard extends InputMethodService
             language = english;
             mKeys = englishKeys;
         }
-        else
+        else if(name == "marathi")
         {
-            language = mainLanguage;
+            language = marathiLanguage;
+            mKeys = mainKeys;
+        }
+        else if(name == "emoji")
+        {
+            language = marathiLanguage;
             mKeys = mainKeys;
         }
     }
@@ -425,12 +422,19 @@ public class DigitalKeyboard extends InputMethodService
             languageName = "english";
             setLanguage("english");
         }
-        else
+        else if(languageName == "english")
         {
-            language = mainLanguage;
+            language = marathiLanguage;
             languageName = "main";
             setLanguage("main");
         }
+        else if(languageName == "emoji")
+        {
+            language = emoji;
+            languageName = "main";
+            setLanguage("main");
+        }
+
         setInputView(onCreateInputView());
     }
 

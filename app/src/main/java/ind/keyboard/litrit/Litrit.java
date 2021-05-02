@@ -16,11 +16,6 @@ import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
 
-import java.util.ArrayList;
-
-import ind.keyboard.language.Language;
-import ind.keyboard.language.MasterLanguage;
-
 public class Litrit extends View
 {
     private float mOuterRadius;
@@ -247,7 +242,7 @@ public class Litrit extends View
             canvas.drawRect(centerX+10,centerX-100,centerX-200,centerX-302,mArcDividerPaint);
 
             //arc seperators
-            canvas.drawArc(bound, getMidAngle(i) + anglePerArc/2 -1, 1, true, mArcDividerPaint);
+            canvas.drawArc(bound, getMidAngle(i) + anglePerArc/2 -1, 50, true, mArcDividerPaint);
         }
 
         //  canvas.drawCircle(centerX, centerY, mInnerRadius, mInnerPaint);

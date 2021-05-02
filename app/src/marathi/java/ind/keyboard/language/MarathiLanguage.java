@@ -9,9 +9,9 @@ import java.util.HashMap;
 
 import ind.keyboard.litrit.KeyProperties;
 
-public class MasterLanguage extends Language
+public class MarathiLanguage extends Language
 {
-    public MasterLanguage()
+    public MarathiLanguage()
     {
         //Log.d("debug","marathi");
         name = "marathi";
@@ -25,7 +25,7 @@ public class MasterLanguage extends Language
         Context context;
         Typeface tf;
 
-       // System.out.println("ask"+a);
+        // System.out.println("ask"+a);
 
         KeyProperties tempKey = new KeyProperties();
         for (int i=0; i < nKeys; i++ )
@@ -283,13 +283,14 @@ public class MasterLanguage extends Language
 
         KeyProperties myKey0 = new KeyProperties();
         myKey0.code = 1;
-        myKey0.label = "\u0915" ;
+        myKey0.label = "\uD83D\uDE0F" ;   //  क  "\u0915"
         myKey0.showBox = false ;
         myKey0.showCustomBox = false ;
         myKey0.customBoxLayout = new String[] {} ;
         myKey0.showIcon = true ;
-        myKey0.icon = "letter_01_07_consonant_k";
+        // myKey0.icon = "letter_01_07_consonant_k";
         myKey0.changeLayout = true ;
+
         myKey0.layout = "";
         myKey.set(0, myKey0);
 
