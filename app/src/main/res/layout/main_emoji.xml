@@ -30,34 +30,34 @@
 
     <Row>
 
-        <Key android:codes="1" android:keyEdgeFlags="left" />
-        <Key android:codes="2"/>
-        <Key android:codes="3"/>
-        <Key android:codes="4"/>
-        <Key android:codes="5"/>
-        <Key android:codes="6"/>
-        <Key android:codes="7" />
-        <Key android:codes="8" />
-        <Key android:codes="9" />
-        <Key android:codes="10" />
-        <Key android:codes="11" android:keyEdgeFlags="right" />
+        <Key android:codes="136" android:keyEdgeFlags="left" />
+        <Key android:codes="137"/>
+        <Key android:codes="138"/>
+        <Key android:codes="139"/>
+        <Key android:codes="140"/>
+        <Key android:codes="141"/>
+        <Key android:codes="142" />
+        <Key android:codes="143" />
+        <Key android:codes="144" />
+        <Key android:codes="145" />
+        <Key android:codes="146" android:keyEdgeFlags="right" />
 
 
     </Row>
 
     <Row>
 
-        <Key android:codes="12" android:keyEdgeFlags="left" />
-        <Key android:codes="13"/>
-        <Key android:codes="14"/>
-        <Key android:codes="15"/>
-        <Key android:codes="16"/>
-        <Key android:codes="17"/>
-        <Key android:codes="18" />
-        <Key android:codes="19" />
-        <Key android:codes="20" />
-        <Key android:codes="21" />
-        <Key android:codes="22" android:keyEdgeFlags="right" />
+        <Key android:codes="147" android:keyEdgeFlags="left" />
+        <Key android:codes="148"/>
+        <Key android:codes="149"/>
+        <Key android:codes="150"/>
+        <Key android:codes="174"/>
+        <Key android:codes="175"/>
+        <Key android:codes="176" />
+        <Key android:codes="177" />
+        <Key android:codes="178" />
+        <Key android:codes="179" />
+        <Key android:codes="180" android:keyEdgeFlags="right" />
 
 
     </Row>

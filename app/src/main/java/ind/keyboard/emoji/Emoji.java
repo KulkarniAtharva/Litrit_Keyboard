@@ -1,4 +1,4 @@
-package ind.keyboard.language;
+package ind.keyboard.emoji;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import ind.keyboard.language.Language;
 import ind.keyboard.litrit.KeyProperties;
 
 public class Emoji extends Language

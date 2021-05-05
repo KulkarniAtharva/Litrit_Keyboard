@@ -19,6 +19,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import ind.keyboard.emoji.Emoji;
 import ind.keyboard.language.Language;
 import ind.keyboard.language.MarathiLanguage;
 import ind.keyboard.language.english.English;
@@ -36,12 +37,14 @@ public class DigitalKeyboard extends InputMethodService
     private CustomKeyboard mKeyboardView;
     private Keyboard mKeyboard;
     private HashMap<Integer, KeyProperties> mKeys;
-    private HashMap<Integer, KeyProperties> mainKeys;
+    private HashMap<Integer, KeyProperties> marathiKeys;
     private HashMap<Integer, KeyProperties> englishKeys;
+    private HashMap<Integer, KeyProperties> emojiKeys;
     private MarathiLanguage marathiLanguage;
     public String mainLanguageSymbol;
     private English english;
     private Language language;
+   // private Emoji emoji;
     private InputConnection mInputConnection;
     private String languageName = "";
     private Context mContext;
@@ -72,30 +75,15 @@ public class DigitalKeyboard extends InputMethodService
     @Override
     public void onInitializeInterface()
     {
-        System.out.println("oni"+Arrays.toString(a));
-
-       // if(a[0] == null)
-       // {
-        //    System.out.println("\u0905");
-            marathiLanguage = new MarathiLanguage();
-       // }
-       // else
-       // {
-        //    System.out.println("go");
-         //   mainLanguage = new MasterLanguage("ll" + a[0]);  // \u0905
-
-          //  int resourceId = getResourceId("default");
-          //  mKeyboard = new Keyboard(this, resourceId);
-
-           // setKeys(a[0]);
-       // }
-
-
-        mainKeys = marathiLanguage.hashThis();
+        marathiLanguage = new MarathiLanguage();
+        marathiKeys = marathiLanguage.hashThis();
         mainLanguageSymbol = marathiLanguage.symbol;
 
         english = new English();
         englishKeys = english.hashThis();
+
+        //emoji = new Emoji();
+        //emojiKeys = emoji.hashThis();
 
         if (languageName == "")
             setLanguage("main");
@@ -119,8 +107,10 @@ public class DigitalKeyboard extends InputMethodService
 
         if(languageName == "main")
             mKeyboardView = (MasterKeyboardView) layout.findViewById(R.id.keyboard);
-        else
+        else if(languageName == "english")
             mKeyboardView = (EnglishKeyboardView) layout.findViewById(R.id.keyboard);
+       // else if(languageName == "emoji")
+        //    mKeyboardView = (EnglishKeyboardView) layout.findViewById(R.id.keyboard);
 
         int resourceId = getResourceId("default");
         mKeyboard = new Keyboard(this, resourceId);
@@ -228,8 +218,8 @@ public class DigitalKeyboard extends InputMethodService
         List<Key> keys = new ArrayList<Key>();
        // List<Key> keys = mKeyboard.getKeys();
         marathiLanguage = new MarathiLanguage();
-        mainKeys = marathiLanguage.hashThis();
-        mKeys = mainKeys;
+        marathiKeys = marathiLanguage.hashThis();
+        mKeys = marathiKeys;
 
         keys = SetKeys.getKeys();
 
@@ -330,8 +320,8 @@ public class DigitalKeyboard extends InputMethodService
     void SetShiftKey(int keyCode)
     {
         marathiLanguage = new MarathiLanguage();
-        mainKeys = marathiLanguage.hashThis();
-        mKeys = mainKeys;
+        marathiKeys = marathiLanguage.hashThis();
+        mKeys = marathiKeys;
 
         for(Key key : keys)
         {
@@ -377,14 +367,15 @@ public class DigitalKeyboard extends InputMethodService
             setInputView(onCreateInputView());
 
         int resourceId = getResourceId(layoutFile);
+        System.out.println(resourceId+"resourceid");
         if (resourceId != 0)
         {
             mKeyboard = new Keyboard(mContext, resourceId);
             setKeys();
             mKeyboardView.setKeyboard(mKeyboard);
         }
-        else
-            Log.d("layout", "you suck");
+     //   else
+       //     Log.d("layout", "you suck");
     }
 
     /**
@@ -399,16 +390,16 @@ public class DigitalKeyboard extends InputMethodService
             language = english;
             mKeys = englishKeys;
         }
-        else if(name == "marathi")
+        else if(name == "main")
         {
             language = marathiLanguage;
-            mKeys = mainKeys;
+            mKeys = marathiKeys;
         }
-        else if(name == "emoji")
+       /* //else if(name == "emoji")
         {
-            language = marathiLanguage;
-            mKeys = mainKeys;
-        }
+            language = emoji;
+            mKeys = emojiKeys;
+        }*/
     }
 
     /**
@@ -428,12 +419,12 @@ public class DigitalKeyboard extends InputMethodService
             languageName = "main";
             setLanguage("main");
         }
-        else if(languageName == "emoji")
+       /* else if(languageName == "emoji")
         {
             language = emoji;
             languageName = "main";
             setLanguage("main");
-        }
+        }*/
 
         setInputView(onCreateInputView());
     }
@@ -509,7 +500,7 @@ public class DigitalKeyboard extends InputMethodService
         {
             mInputConnection.setComposingText("", 1);
             mInputConnection.finishComposingText();
-            mKeyboardView.configChanged();;
+            mKeyboardView.configChanged();
         }
         super.onConfigurationChanged(newConfig);
     }
