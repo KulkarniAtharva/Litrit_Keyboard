@@ -2186,6 +2186,402 @@ public class MarathiLanguage extends Language
         myKey180.changeLayout = true ;
         myKey180.layout = "";
         myKey.set(180, myKey180);
+
+        KeyProperties myKey181 = new KeyProperties();
+        myKey181.code = 181;
+        myKey181.label = "\uD83D\uDE05" ;   // emoji 23      //  "\uD83D\uDE0F"
+        myKey181.showBox = false ;
+        myKey181.showCustomBox = false ;
+        myKey181.customBoxLayout = new String[] {} ;
+        myKey181.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey181.changeLayout = true ;
+        myKey181.layout = "";
+        myKey.set(181, myKey181);
+
+        KeyProperties myKey182 = new KeyProperties();
+        myKey182.code = 182;
+        myKey182.label = "\uD83D\uDE02" ;     // emoji 24
+        myKey182.showBox = false ;
+        myKey182.showCustomBox = false ;
+        myKey182.customBoxLayout = new String[] {} ;
+        myKey182.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey182.changeLayout = true ;
+        myKey182.layout = "";
+        myKey.set(182, myKey182);
+
+        KeyProperties myKey183 = new KeyProperties();
+        myKey183.code = 183;
+        myKey183.label = "\uD83D\uDE0D" ;   //  emoji 25
+        myKey183.showBox = false ;
+        myKey183.showCustomBox = false ;
+        myKey183.customBoxLayout = new String[] {} ;
+        myKey183.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey183.changeLayout = true ;
+        myKey183.layout = "";
+        myKey.set(183, myKey183);
+
+        KeyProperties myKey184 = new KeyProperties();
+        myKey184.code = 184;
+        myKey184.label = "\uD83E\uDD23" ;   //  emoji 26
+        myKey184.showBox = false ;
+        myKey184.showCustomBox = false ;
+        myKey184.customBoxLayout = new String[] {} ;
+        myKey184.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey184.changeLayout = true ;
+        myKey184.layout = "";
+        myKey.set(184, myKey184);
+
+        KeyProperties myKey185 = new KeyProperties();
+        myKey185.code = 185;
+        myKey185.label = "\uD83D\uDE2D" ;   //  emoji 27
+        myKey185.showBox = false ;
+        myKey185.showCustomBox = false ;
+        myKey185.customBoxLayout = new String[] {} ;
+        myKey185.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey185.changeLayout = true ;
+        myKey185.layout = "";
+        myKey.set(185, myKey185);
+
+        KeyProperties myKey186 = new KeyProperties();
+        myKey186.code = 186;
+        myKey186.label = "\uD83E\uDD23" ;   //  emoji 28
+        myKey186.showBox = false ;
+        myKey186.showCustomBox = false ;
+        myKey186.customBoxLayout = new String[] {} ;
+        myKey186.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey186.changeLayout = true ;
+        myKey186.layout = "";
+        myKey.set(186, myKey186);
+
+        KeyProperties myKey187 = new KeyProperties();
+        myKey187.code = 187;
+        myKey187.label = "\uD83D\uDE18" ;   //  emoji 29
+        myKey187.showBox = false ;
+        myKey187.showCustomBox = false ;
+        myKey187.customBoxLayout = new String[] {} ;
+        myKey187.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey187.changeLayout = true ;
+        myKey187.layout = "";
+        myKey.set(187, myKey187);
+
+        KeyProperties myKey188 = new KeyProperties();
+        myKey188.code = 188;
+        myKey188.label = "\uD83E\uDD23" ;   //  emoji 30
+        myKey188.showBox = false ;
+        myKey188.showCustomBox = false ;
+        myKey188.customBoxLayout = new String[] {} ;
+        myKey188.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey188.changeLayout = true ;
+        myKey188.layout = "";
+        myKey.set(188, myKey188);
+
+        KeyProperties myKey189 = new KeyProperties();
+        myKey189.code = 189;
+        myKey189.label = "\uD83E\uDD23" ;   //  emoji 31
+        myKey189.showBox = false ;
+        myKey189.showCustomBox = false ;
+        myKey189.customBoxLayout = new String[] {} ;
+        myKey189.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey189.changeLayout = true ;
+        myKey189.layout = "";
+        myKey.set(189, myKey189);
+
+        KeyProperties myKey190 = new KeyProperties();
+        myKey190.code = 190;
+        myKey190.label = "\uD83E\uDD23" ;   //  emoji 32
+        myKey190.showBox = false ;
+        myKey190.showCustomBox = false ;
+        myKey190.customBoxLayout = new String[] {} ;
+        myKey190.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey190.changeLayout = true ;
+        myKey190.layout = "";
+        myKey.set(190, myKey190);
+
+        KeyProperties myKey191 = new KeyProperties();
+        myKey191.code = 191;
+        myKey191.label = "\uD83E\uDD23" ;   //  emoji 33
+        myKey191.showBox = false ;
+        myKey191.showCustomBox = false ;
+        myKey191.customBoxLayout = new String[] {} ;
+        myKey191.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey191.changeLayout = true ;
+        myKey191.layout = "";
+        myKey.set(191, myKey191);
+
+        KeyProperties myKey192 = new KeyProperties();
+        myKey192.code = 192;
+        myKey192.label = "\uD83E\uDD23" ;   //  emoji 34
+        myKey192.showBox = false ;
+        myKey192.showCustomBox = false ;
+        myKey192.customBoxLayout = new String[] {} ;
+        myKey192.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey192.changeLayout = true ;
+        myKey192.layout = "";
+        myKey.set(192, myKey192);
+
+        KeyProperties myKey193 = new KeyProperties();
+        myKey193.code = 193;
+        myKey193.label = "\uD83D\uDE02" ;     // emoji 35
+        myKey193.showBox = false ;
+        myKey193.showCustomBox = false ;
+        myKey193.customBoxLayout = new String[] {} ;
+        myKey193.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey193.changeLayout = true ;
+        myKey193.layout = "";
+        myKey.set(193 ,myKey193);
+
+        KeyProperties myKey194 = new KeyProperties();
+        myKey194.code = 194;
+        myKey194.label = "\uD83D\uDE0D" ;   //  emoji 36
+        myKey194.showBox = false ;
+        myKey194.showCustomBox = false ;
+        myKey194.customBoxLayout = new String[] {} ;
+        myKey194.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey194.changeLayout = true ;
+        myKey194.layout = "";
+        myKey.set(194, myKey194);
+
+        KeyProperties myKey195 = new KeyProperties();
+        myKey195.code = 195;
+        myKey195.label = "\uD83E\uDD23" ;   //  emoji 37
+        myKey195.showBox = false ;
+        myKey195.showCustomBox = false ;
+        myKey195.customBoxLayout = new String[] {} ;
+        myKey195.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey195.changeLayout = true ;
+        myKey195.layout = "";
+        myKey.set(195, myKey195);
+
+        KeyProperties myKey196 = new KeyProperties();
+        myKey196.code = 196;
+        myKey196.label = "\uD83D\uDE2D" ;   //  emoji 38
+        myKey196.showBox = false ;
+        myKey196.showCustomBox = false ;
+        myKey196.customBoxLayout = new String[] {} ;
+        myKey196.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey196.changeLayout = true ;
+        myKey196.layout = "";
+        myKey.set(196, myKey196);
+
+        KeyProperties myKey197 = new KeyProperties();
+        myKey197.code = 197;
+        myKey197.label = "\uD83E\uDD23" ;   //  emoji 39
+        myKey197.showBox = false ;
+        myKey197.showCustomBox = false ;
+        myKey197.customBoxLayout = new String[] {} ;
+        myKey197.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey197.changeLayout = true ;
+        myKey197.layout = "";
+        myKey.set(197, myKey197);
+
+        KeyProperties myKey198 = new KeyProperties();
+        myKey198.code = 198;
+        myKey198.label = "\uD83D\uDE18" ;   //  emoji 40
+        myKey198.showBox = false ;
+        myKey198.showCustomBox = false ;
+        myKey198.customBoxLayout = new String[] {} ;
+        myKey198.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey198.changeLayout = true ;
+        myKey198.layout = "";
+        myKey.set(198, myKey198);
+
+        KeyProperties myKey199 = new KeyProperties();
+        myKey199.code = 199;
+        myKey199.label = "\uD83E\uDD23" ;   //  emoji 41
+        myKey199.showBox = false ;
+        myKey199.showCustomBox = false ;
+        myKey199.customBoxLayout = new String[] {} ;
+        myKey199.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey199.changeLayout = true ;
+        myKey199.layout = "";
+        myKey.set(199, myKey199);
+
+        KeyProperties myKey206 = new KeyProperties();
+        myKey206.code = 206;
+        myKey206.label = "\uD83E\uDD23" ;   //  emoji 42
+        myKey206.showBox = false ;
+        myKey206.showCustomBox = false ;
+        myKey206.customBoxLayout = new String[] {} ;
+        myKey206.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey206.changeLayout = true ;
+        myKey206.layout = "";
+        myKey.set(206, myKey206);
+
+        KeyProperties myKey207 = new KeyProperties();
+        myKey207.code = 207;
+        myKey207.label = "\uD83E\uDD23" ;   //  emoji 43
+        myKey207.showBox = false ;
+        myKey207.showCustomBox = false ;
+        myKey207.customBoxLayout = new String[] {} ;
+        myKey207.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey207.changeLayout = true ;
+        myKey207.layout = "";
+        myKey.set(207, myKey207);
+
+        KeyProperties myKey208 = new KeyProperties();
+        myKey208.code = 208;
+        myKey208.label = "\uD83E\uDD23" ;   //  emoji 44
+        myKey208.showBox = false ;
+        myKey208.showCustomBox = false ;
+        myKey208.customBoxLayout = new String[] {} ;
+        myKey208.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey208.changeLayout = true ;
+        myKey208.layout = "";
+        myKey.set(208, myKey208);
+
+        KeyProperties myKey209 = new KeyProperties();
+        myKey209.code = 209;
+        myKey209.label = "\uD83E\uDD23" ;   //  emoji 45
+        myKey209.showBox = false ;
+        myKey209.showCustomBox = false ;
+        myKey209.customBoxLayout = new String[] {} ;
+        myKey209.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey209.changeLayout = true ;
+        myKey209.layout = "";
+        myKey.set(209, myKey209);
+
+        KeyProperties myKey210 = new KeyProperties();
+        myKey210.code = 210;
+        myKey210.label = "\uD83E\uDD23" ;   //  emoji 46
+        myKey210.showBox = false ;
+        myKey210.showCustomBox = false ;
+        myKey210.customBoxLayout = new String[] {} ;
+        myKey210.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey210.changeLayout = true ;
+        myKey210.layout = "";
+        myKey.set(210, myKey210);
+
+        KeyProperties myKey211 = new KeyProperties();
+        myKey211.code = 211;
+        myKey211.label = "\uD83E\uDD23" ;   //  emoji 47
+        myKey211.showBox = false ;
+        myKey211.showCustomBox = false ;
+        myKey211.customBoxLayout = new String[] {} ;
+        myKey211.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey211.changeLayout = true ;
+        myKey211.layout = "";
+        myKey.set(211, myKey211);
+
+        KeyProperties myKey212 = new KeyProperties();
+        myKey212.code = 212;
+        myKey212.label = "\uD83E\uDD23" ;   //  emoji 48
+        myKey212.showBox = false ;
+        myKey212.showCustomBox = false ;
+        myKey212.customBoxLayout = new String[] {} ;
+        myKey212.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey212.changeLayout = true ;
+        myKey212.layout = "";
+        myKey.set(212, myKey212);
+
+        KeyProperties myKey213 = new KeyProperties();
+        myKey213.code = 213;
+        myKey213.label = "\uD83E\uDD23" ;   //  emoji 49
+        myKey213.showBox = false ;
+        myKey213.showCustomBox = false ;
+        myKey213.customBoxLayout = new String[] {} ;
+        myKey213.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey213.changeLayout = true ;
+        myKey213.layout = "";
+        myKey.set(213, myKey213);
+
+        KeyProperties myKey214 = new KeyProperties();
+        myKey214.code = 214;
+        myKey214.label = "\uD83E\uDD23" ;   //  emoji 50
+        myKey214.showBox = false ;
+        myKey214.showCustomBox = false ;
+        myKey214.customBoxLayout = new String[] {} ;
+        myKey214.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey214.changeLayout = true ;
+        myKey214.layout = "";
+        myKey.set(214, myKey214);
+
+        KeyProperties myKey215 = new KeyProperties();
+        myKey215.code = 215;
+        myKey215.label = "\uD83E\uDD23" ;   //  emoji 51
+        myKey215.showBox = false ;
+        myKey215.showCustomBox = false ;
+        myKey215.customBoxLayout = new String[] {} ;
+        myKey215.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey215.changeLayout = true ;
+        myKey215.layout = "";
+        myKey.set(215, myKey215);
+
+        KeyProperties myKey216 = new KeyProperties();
+        myKey216.code = 216;
+        myKey216.label = "\uD83E\uDD23" ;   //  emoji 52
+        myKey216.showBox = false ;
+        myKey216.showCustomBox = false ;
+        myKey216.customBoxLayout = new String[] {} ;
+        myKey216.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey216.changeLayout = true ;
+        myKey216.layout = "";
+        myKey.set(216, myKey216);
+
+        KeyProperties myKey217 = new KeyProperties();
+        myKey217.code = 217;
+        myKey217.label = "\uD83E\uDD23" ;   //  emoji 53
+        myKey217.showBox = false ;
+        myKey217.showCustomBox = false ;
+        myKey217.customBoxLayout = new String[] {} ;
+        myKey217.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey217.changeLayout = true ;
+        myKey217.layout = "";
+        myKey.set(217, myKey217);
+
+        KeyProperties myKey218 = new KeyProperties();
+        myKey218.code = 218;
+        myKey218.label = "\uD83E\uDD23" ;   //  emoji 54
+        myKey218.showBox = false ;
+        myKey218.showCustomBox = false ;
+        myKey218.customBoxLayout = new String[] {} ;
+        myKey218.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey218.changeLayout = true ;
+        myKey218.layout = "";
+        myKey.set(218, myKey218);
+
+        KeyProperties myKey219 = new KeyProperties();
+        myKey219.code = 219;
+        myKey219.label = "\uD83E\uDD23" ;   //  emoji 55
+        myKey219.showBox = false ;
+        myKey219.showCustomBox = false ;
+        myKey219.customBoxLayout = new String[] {} ;
+        myKey219.showIcon = true ;
+        //myKey136.icon = "letter_01_07_consonant_k";
+        myKey219.changeLayout = true ;
+        myKey219.layout = "";
+        myKey.set(219, myKey219);
     }
 
     @Override @SuppressLint("UseSparseArrays")

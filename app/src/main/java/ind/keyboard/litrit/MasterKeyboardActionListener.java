@@ -191,7 +191,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
     public void onLongPress(Key key)
     {
-        showPreview(key.codes[0],"a");
+       // showPreview(key.codes[0],"a");
 
 
         if (key.codes[0] == SHIFT)
@@ -503,7 +503,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             changeLayout("emoji");
         }
 
-        if((keyCode >= 136 && keyCode <= 150) || (keyCode >= 174 && keyCode <= 180))
+        if((keyCode >= 136 && keyCode <= 150) || (keyCode >= 174 && keyCode <= 199) || (keyCode >= 206 && keyCode <= 219))
         {
             KeyProperties key = mKeys.get(keyCode);
 
