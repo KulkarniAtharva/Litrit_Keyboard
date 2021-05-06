@@ -11,7 +11,7 @@ Soon going to be live on Google PlayStore
 - 3 Languages (English, Marathi, Hindi)
 - Emoji support - for better communication
 
-### Upcomming Features
+### Upcoming Features
 
 - Voice Recognition
 - Transliteration
