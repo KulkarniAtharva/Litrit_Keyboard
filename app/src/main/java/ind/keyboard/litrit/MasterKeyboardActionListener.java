@@ -72,6 +72,9 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
     int selecteditem = -1;
     static int clicked;
 
+    String stack[] = new String[1000]; // Maximum size of Stack
+    int top;
+
     static Handler mHandler = new Handler()
     {
         @Override
@@ -127,6 +130,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
         inExceptionMode = false;
         exceptionCode = 0;
         preText = "";
+
+        top = -1;
     }
 
     public void setInputConnection(InputConnection ic)
@@ -248,6 +253,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
             System.out.println("yooo"+keyCode+" "+key.label);
 
+            changeToDynamicOfConstant(keyCode);
+
             if(keyCode >= 1 && keyCode <=25)
             {
                 clicked = keyCode;
@@ -313,6 +320,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                                 //if(SetKeys.getA() == 1)
                                 commitText(key1.label.toString());
 
+                                stack[++top] = key1.label.toString();
+
                                 showPreview(keyCode, key1.label.toString());
                                 //flag1 =1;
                             }
@@ -371,8 +380,10 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             }
             else
             {
+                key = mKeys.get(keyCode);
+
                 if(flag == 0 && flag1 == 0)
-                    showPreview(keyCode, key.label);
+                    showPreview(keyCode, key.label+"x");
 
                 /*if(isSpinePressed)
                 {
@@ -460,7 +471,10 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             System.out.println("dff"+keyCode);
 
             if(SetKeys.getA() == 1)
+            {
                 commitText(key.label);
+                stack[++top] = key.label;
+            }
 
             if(SetKeys.getA() == 1)
             {
@@ -468,10 +482,16 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 {
                     backspace();
                     backspace();
+                    top--;
+                    top--;
+
                 }
 
                 if(keyCode == 107 || keyCode == 108 || keyCode == 109 || keyCode == 52 || keyCode == 53)
+                {
                     backspace();
+                    top--;
+                }
             }
 
             if(key.changeLayout)
@@ -508,6 +528,9 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             KeyProperties key = mKeys.get(keyCode);
 
             commitText(key.label);
+            stack[++top] = key.label;
+
+
         }
 
         removePreview();
@@ -543,6 +566,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 {
                     //backspace();
                     commitText(a[i]);
+
+                    stack[++top] = a[i];
                     break;
                 }
             }
@@ -558,11 +583,42 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
         {
           //  backspace();
             commitText(key.label);
+
+            stack[++top] = key.label;
         }
 
         System.out.println("xddd"+key.label);
 
         removePreview();
+    }
+
+    void changeToDynamicOfConstant(int keyCode)        // change to dynamic of constant
+    {
+        KeyProperties key = mKeys.get(keyCode);
+
+        System.out.println("yooo"+keyCode+" "+key.label);
+
+        if(keyCode >= 1 && keyCode <=25)
+        {
+            clicked = keyCode;
+
+            String[] a = new String[23];
+
+            a[0] = key.label + "्";             a[8] = key.label + "ो";             a[16] = key.label + "़";
+            a[1] = key.label + "ा";            a[9] = key.label + "ौ";             a[17] = key.label + "ॄ";
+            a[2] = key.label + "ि";            a[10] = key.label + "ं";             a[18] = key.label + "ृ";
+            a[3] = key.label + "ी";            a[11] = key.label + "ः";            a[19] = "र" + "्" + key.label;
+            a[4] = key.label + "ु";             a[12] = key.label;                  a[20] = key.label + "्" + "र";
+            a[5] = key.label + "ू";             a[13] = key.label + "ॅ";            a[21] = key.label + "ॣ";
+            a[6] = key.label + "े";             a[14] = key.label + "ॉ";            a[22] = key.label + "ॢ";
+            a[7] = key.label + "ै";             a[15] = key.label + "ँ";
+
+            SetKeys.setX(a);
+            SetKeys.setA(1);
+
+            DigitalKeyboard obj = new DigitalKeyboard();
+            obj.setKey();
+        }
     }
 
     void convertToDynamic(String label)     // converting to dynamic of spine
@@ -674,11 +730,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             if(selection == null)
                 mInputConnection.deleteSurroundingText(1, 0);
 
-           // CharSequence selection1 = mInputConnection.getSelectedText(2);
-
-           // System.out.println("charsequence"+selection1);
-
-           // changeLayout("default");
+            String x = stack[top--];
+            changeToDynamicOfConstant(keyCode);
         }
         else if(keyCode == SPACE)
         {
@@ -689,6 +742,9 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             }
 
             changeLayout("default");
+
+            for(int i=0;i<stack.length;i++)
+                System.out.println("space "+stack[i]);
         }
         else if (keyCode == SYMBOLS)
         {
