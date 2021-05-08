@@ -72,7 +72,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
     int selecteditem = -1;
     static int clicked;
 
-    String stack[] = new String[1000]; // Maximum size of Stack
+    int stack[] = new int[1000]; // Maximum size of Stack
     int top;
 
     static Handler mHandler = new Handler()
@@ -255,28 +255,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
             changeToDynamicOfConstant(keyCode);
 
-            if(keyCode >= 1 && keyCode <=25)
-            {
-                clicked = keyCode;
-
-                String[] a = new String[23];
-
-                a[0] = key.label + "्";             a[8] = key.label + "ो";             a[16] = key.label + "़";
-                a[1] = key.label + "ा";            a[9] = key.label + "ौ";             a[17] = key.label + "ॄ";
-                a[2] = key.label + "ि";            a[10] = key.label + "ं";             a[18] = key.label + "ृ";
-                a[3] = key.label + "ी";            a[11] = key.label + "ः";            a[19] = "र" + "्" + key.label;
-                a[4] = key.label + "ु";             a[12] = key.label;                  a[20] = key.label + "्" + "र";
-                a[5] = key.label + "ू";             a[13] = key.label + "ॅ";            a[21] = key.label + "ॣ";
-                a[6] = key.label + "े";             a[14] = key.label + "ॉ";            a[22] = key.label + "ॢ";
-                a[7] = key.label + "ै";             a[15] = key.label + "ँ";
-
-                SetKeys.setX(a);
-                SetKeys.setA(1);
-
-                DigitalKeyboard obj = new DigitalKeyboard();
-                obj.setKey();
-            }
-
             int flag1 = 0;
             int flag = 0;
 
@@ -320,7 +298,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                                 //if(SetKeys.getA() == 1)
                                 commitText(key1.label.toString());
 
-                                stack[++top] = key1.label.toString();
+                                stack[++top] = keyCode;
+                                System.out.println("top"+top+" "+key1.label.toString());
 
                                 showPreview(keyCode, key1.label.toString());
                                 //flag1 =1;
@@ -383,7 +362,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 key = mKeys.get(keyCode);
 
                 if(flag == 0 && flag1 == 0)
-                    showPreview(keyCode, key.label+"x");
+                    showPreview(keyCode, key.label);
 
                 /*if(isSpinePressed)
                 {
@@ -473,7 +452,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             if(SetKeys.getA() == 1)
             {
                 commitText(key.label);
-                stack[++top] = key.label;
+                stack[++top] = keyCode;
+                System.out.println("top"+top+" "+key.label);
             }
 
             if(SetKeys.getA() == 1)
@@ -482,15 +462,15 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 {
                     backspace();
                     backspace();
-                    top--;
-                    top--;
+                  //  top--;
+                  //  top--;
 
                 }
 
                 if(keyCode == 107 || keyCode == 108 || keyCode == 109 || keyCode == 52 || keyCode == 53)
                 {
                     backspace();
-                    top--;
+                   // top--;
                 }
             }
 
@@ -528,8 +508,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             KeyProperties key = mKeys.get(keyCode);
 
             commitText(key.label);
-            stack[++top] = key.label;
-
+            stack[++top] = keyCode;
+            System.out.println("top"+top+" "+key.label);
 
         }
 
@@ -567,7 +547,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                     //backspace();
                     commitText(a[i]);
 
-                    stack[++top] = a[i];
+                   // stack[++top] = keyCode;
+                   // System.out.println("top"+top+" "+a[i]);
                     break;
                 }
             }
@@ -584,7 +565,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
           //  backspace();
             commitText(key.label);
 
-            stack[++top] = key.label;
+            stack[++top] = keyCode;
+            System.out.println("top"+top+" "+key.label);
         }
 
         System.out.println("xddd"+key.label);
@@ -730,8 +712,26 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             if(selection == null)
                 mInputConnection.deleteSurroundingText(1, 0);
 
-            String x = stack[top--];
-            changeToDynamicOfConstant(keyCode);
+            System.out.println("top"+top);
+            top--;
+            //top--;
+
+
+            if(top >= 0)
+            {
+                int x = stack[top];
+                System.out.println("topoutput"+x);
+
+                if(stack[top+1] >= 1 && stack[top+1] <= 25)
+                    changeLayout("default");
+                else
+                    changeToDynamicOfConstant(x);
+            }
+            else
+            {
+                top = -1;
+                changeLayout("default");
+            }
         }
         else if(keyCode == SPACE)
         {
