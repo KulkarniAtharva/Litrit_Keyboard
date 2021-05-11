@@ -71,6 +71,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
     private boolean isSpinePressed;
     int selecteditem = -1;
     static int clicked;
+    boolean isEmoji = false;
 
     int stack[] = new int[1000]; // Maximum size of Stack
     int top;
@@ -293,13 +294,13 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                                 changeLayout("default");
                                 DigitalKeyboard obj1 = new DigitalKeyboard();
 
-                                obj1.setKey();
+                                obj1.setKey("main");
 
                                 //if(SetKeys.getA() == 1)
                                 commitText(key1.label.toString());
 
                                 stack[++top] = keyCode;
-                                System.out.println("top"+top+" "+key1.label.toString());
+                                System.out.println("top1"+top+" "+key1.label.toString());
 
                                 showPreview(keyCode, key1.label.toString());
                                 //flag1 =1;
@@ -321,6 +322,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             if(SetKeys.getA() == 0 && (keyCode == 2011 || keyCode == 2012 || keyCode == 2013 || keyCode == 2014 || keyCode == 2015))
             {
                 isSpinePressed = true;
+
+                changeLayout("default");
 
                 // opening spine drawer
 
@@ -406,7 +409,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
         {
             if (isShifted && !(isPersistent))
             {
-                changeLayout("default");
+              //  changeLayout("default");
                 isShifted = false;
             }
         }
@@ -453,7 +456,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             {
                 commitText(key.label);
                 stack[++top] = keyCode;
-                System.out.println("top"+top+" "+key.label);
+                System.out.println("top2"+top+" "+key.label);
             }
 
             if(SetKeys.getA() == 1)
@@ -500,7 +503,16 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
         if(keyCode == 405)
         {
-            changeLayout("emoji");
+            if(isEmoji)
+            {
+                changeLayout("default");
+                isEmoji = false;
+            }
+            else
+            {
+                changeLayout("emoji");
+                isEmoji = true;
+            }
         }
 
         if((keyCode >= 136 && keyCode <= 150) || (keyCode >= 174 && keyCode <= 199) || (keyCode >= 206 && keyCode <= 219))
@@ -509,7 +521,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
             commitText(key.label);
             stack[++top] = keyCode;
-            System.out.println("top"+top+" "+key.label);
+            System.out.println("top3"+top+" "+key.label);
+            removePreview();
 
         }
 
@@ -565,8 +578,9 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
           //  backspace();
             commitText(key.label);
 
-            stack[++top] = keyCode;
-            System.out.println("top"+top+" "+key.label);
+            if(!(keyCode >= 2011 && keyCode <= 2015))
+                stack[++top] = keyCode;
+            System.out.println("top4"+top+" "+key.label);
         }
 
         System.out.println("xddd"+key.label);
@@ -599,7 +613,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             SetKeys.setA(1);
 
             DigitalKeyboard obj = new DigitalKeyboard();
-            obj.setKey();
+            obj.setKey("main");
         }
     }
 
@@ -671,9 +685,9 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
      *
      * @param layout name string of the layout resource
      */
-    private void changeLanguage()
+    private void changeLanguage(String lang)
     {
-        mSoftKeyboard.changeLanguage();
+        mSoftKeyboard.changeLanguage(lang);
     }
 
     /**
@@ -722,10 +736,19 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 int x = stack[top];
                 System.out.println("topoutput"+x);
 
-                if(stack[top+1] >= 1 && stack[top+1] <= 25)
+                for(int i=0;i<stack.length;i++)
+                {
+                    KeyProperties key1 = mKeys.get(stack[i]);
+
+                    System.out.println("allstack " + key1.label);
+                }
+
+                if(stack[top+1] >= 1 && stack[top+1] <= 25 || (stack[top+1] >= 2011 && stack[top+1] <= 2015))
                     changeLayout("default");
                 else
                     changeToDynamicOfConstant(x);
+
+
             }
             else
             {
@@ -799,7 +822,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             final int checkedItem = -1; //this will checked the item when user open the dialog
 
             // Get the layout inflater
-            LayoutInflater inflater = (SetKeys.getContext()).getLayoutInflater();
+          //  LayoutInflater inflater = (SetKeys.getContext()).getLayoutInflater();
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout
 
@@ -816,7 +839,9 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                    // selecteditem = which;
 
                     if(which == 0)
-                        changeLanguage();
+                        changeLanguage("english");
+                    else if(which == 2)
+                        changeLanguage("hindi");
 
                     dialog.dismiss();
                 }

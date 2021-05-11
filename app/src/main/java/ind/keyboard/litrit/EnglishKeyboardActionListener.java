@@ -432,9 +432,9 @@ public class EnglishKeyboardActionListener implements OnKeyboardActionListener, 
      * @param layout
      *            name string of the layout resource
      */
-    private void changeLanguage()
+    private void changeLanguage(String lang)
     {
-        mSoftKeyboard.changeLanguage();
+        mSoftKeyboard.changeLanguage(lang);
     }
 
     /**
@@ -545,8 +545,10 @@ public class EnglishKeyboardActionListener implements OnKeyboardActionListener, 
 
                   //  selecteditem = which;
 
-                    if(which == 1 || which == 2)
-                        changeLanguage();
+                    if(which == 1)
+                        changeLanguage("main");
+                    else if(which == 2)
+                        changeLanguage("hindi");
 
                     dialog.dismiss();
                 }

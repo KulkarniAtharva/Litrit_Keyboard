@@ -10,7 +10,7 @@
     <!--android:keyHeight="7.738%p"-->
 
     <Row
-       >
+        >
 
         <Key
             android:codes="@string/english"

@@ -65,6 +65,8 @@ public class MainActivity extends FragmentActivity
         {
             getActionBar().setTitle(getString(R.string.title));
         }
+
+
     }
 
     @Override

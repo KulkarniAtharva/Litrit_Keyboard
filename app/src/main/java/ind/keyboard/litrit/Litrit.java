@@ -242,15 +242,15 @@ public class Litrit extends View
             canvas.drawRect(centerX+10,centerX-100,centerX-200,centerX-302,mArcDividerPaint);
 
             //arc seperators
-            canvas.drawArc(bound, getMidAngle(i) + anglePerArc/2 -1, 50, true, mArcDividerPaint);
+         //   canvas.drawArc(bound, getMidAngle(i) + anglePerArc/2 -1, 50, true, mArcDividerPaint);
         }
 
         //  canvas.drawCircle(centerX, centerY, mInnerRadius, mInnerPaint);
-        drawLetters(canvas);
+      //  drawLetters(canvas);
     }
 
     // no
-    private void drawLetters(Canvas canvas)
+   /* private void drawLetters(Canvas canvas)
     {
         float offsetY = 0;
         Rect textBounds = new Rect();
@@ -265,7 +265,7 @@ public class Litrit extends View
             PointF textPos = getArcTextPoint(i);
             canvas.drawText(getTextForArc(i), textPos.x, textPos.y, mArcTextPaint);
         }
-    }
+    }*/
 
     @Override
     protected void onMeasure(int measuredWidth, int measuredHeight)

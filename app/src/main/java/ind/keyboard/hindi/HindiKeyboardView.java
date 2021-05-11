@@ -1,4 +1,4 @@
-package ind.keyboard.emoji;
+package ind.keyboard.hindi;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -19,16 +19,17 @@ import ind.keyboard.litrit.CustomKeyboard;
 import ind.keyboard.litrit.DigitalKeyboard;
 import ind.keyboard.litrit.KeyProperties;
 import ind.keyboard.litrit.Litrit;
+import ind.keyboard.litrit.MasterKeyboardActionListener;
 import ind.keyboard.litrit.R;
 
 // where marathi keyboard is getting mapped
 
-public class EmojiKeyboardView extends CustomKeyboard
+public class HindiKeyboardView extends CustomKeyboard
 {
     public PopupWindow mChakraPopup;
     public View mPopupParent;
     public Litrit mSwaraChakra;
-    private EmojiKeyboardActionListener emojiKeyboardActionListener;
+    private HindiKeyboardActionListener mActionListener;
     private boolean isPassword;
     private Paint tf;
     private Context mContext;
@@ -38,14 +39,14 @@ public class EmojiKeyboardView extends CustomKeyboard
     public PopupWindow mPreviewPopup2;
     public TextView mPreviewTextView2;
 
-    public EmojiKeyboardView(Context context, AttributeSet attrs)
+    public HindiKeyboardView(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         initialize(context);
         // TODO Auto-generated constructor stub
     }
 
-    public EmojiKeyboardView(Context context, AttributeSet attrs, int defStyle)
+    public HindiKeyboardView(Context context, AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
         initialize(context);
@@ -113,23 +114,28 @@ public class EmojiKeyboardView extends CustomKeyboard
     @Override
     public void init(DigitalKeyboard sk, Language lang, HashMap<Integer, KeyProperties> keys)
     {
-        emojiKeyboardActionListener = new EmojiKeyboardActionListener();
-        this.setOnKeyboardActionListener(emojiKeyboardActionListener);
-        emojiKeyboardActionListener.initialize(this);
-        this.setOnTouchListener(emojiKeyboardActionListener);
-        emojiKeyboardActionListener.setKeysMap(keys);
-        emojiKeyboardActionListener.setHalantEnd(lang.halantEnd);
-        emojiKeyboardActionListener.setSoftKeyboard(sk);
+        mActionListener = new HindiKeyboardActionListener();
+        this.setOnKeyboardActionListener(mActionListener);
+        mActionListener.initialize(this);
+       // this.setOnTouchListener(mActionListener);
+        mActionListener.setKeysMap(keys);
+        mActionListener.setHalantEnd(lang.halantEnd);
+        mActionListener.setSoftKeyboard(sk);
         InputConnection mInputConnection = sk.getCurrentInputConnection();
-        emojiKeyboardActionListener.setInputConnection(mInputConnection);
+        mActionListener.setInputConnection(mInputConnection);
 
         isPassword = sk.isPassword();
+
+        String[] swaras = lang.defaultBox;
+        boolean halantExists = lang.halantExists;
+        Litrit.setHalantExists(halantExists);
+        Litrit.setDefaultChakra(swaras);
     }
 
     @Override
     public void resetInputConnection(InputConnection ic)
     {
-        emojiKeyboardActionListener.setInputConnection(ic);
+        mActionListener.setInputConnection(ic);
         if (!isPassword)
         {
         }
@@ -138,7 +144,7 @@ public class EmojiKeyboardView extends CustomKeyboard
     @Override
     protected boolean onLongPress(Key key)
     {
-        emojiKeyboardActionListener.onLongPress(key);
+        mActionListener.onLongPress(key);
         return super.onLongPress(key);
     }
 

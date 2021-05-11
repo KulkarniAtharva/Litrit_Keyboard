@@ -1,4 +1,4 @@
-package ind.keyboard.emoji;
+package ind.keyboard.hindi;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -11,7 +11,6 @@ import android.os.Message;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.MeasureSpec;
@@ -29,13 +28,14 @@ import java.util.List;
 import ind.keyboard.litrit.DigitalKeyboard;
 import ind.keyboard.litrit.KeyProperties;
 import ind.keyboard.litrit.Litrit;
+import ind.keyboard.litrit.MasterKeyboardView;
 import ind.keyboard.litrit.R;
 import ind.keyboard.litrit.SetKeys;
 
-public class EmojiKeyboardActionListener implements OnKeyboardActionListener, OnTouchListener
+public class HindiKeyboardActionListener implements OnKeyboardActionListener
 {
     private DigitalKeyboard mSoftKeyboard;
-    private static EmojiKeyboardView mKeyboardView;
+    private static HindiKeyboardView mKeyboardView;
     private static PopupWindow mChakraPopup;
     private static Litrit mSwaraChakra;
     private static View mPopupParent;
@@ -75,6 +75,9 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
     int selecteditem = -1;
     static int clicked;
 
+    int stack[] = new int[1000]; // Maximum size of Stack
+    int top;
+
     static Handler mHandler = new Handler()
     {
         @Override
@@ -98,9 +101,9 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
         }
     };
 
-    public void initialize(EmojiKeyboardView mKeyboardView)
+    public void initialize(HindiKeyboardView mKeyboardView)
     {
-        EmojiKeyboardActionListener.mKeyboardView = mKeyboardView;
+        HindiKeyboardActionListener.mKeyboardView = mKeyboardView;
 
         mChakraPopup = mKeyboardView.mChakraPopup;
         mSwaraChakra = mKeyboardView.mSwaraChakra;
@@ -130,6 +133,8 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
         inExceptionMode = false;
         exceptionCode = 0;
         preText = "";
+
+        top = -1;
     }
 
     public void setInputConnection(InputConnection ic)
@@ -194,7 +199,7 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
 
     public void onLongPress(Key key)
     {
-        showPreview(key.codes[0],"a");
+       // showPreview(key.codes[0],"a");
 
 
         if (key.codes[0] == SHIFT)
@@ -248,6 +253,130 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
         {
             showBox = mKeys.get(keyCode).showBox && !(isChakraVisible);
             key = mKeys.get(keyCode);
+
+            System.out.println("yooo"+keyCode+" "+key.label);
+
+            changeToDynamicOfConstant(keyCode);
+
+            int flag1 = 0;
+            int flag = 0;
+
+            if(isSpinePressed)
+            {
+                List<Key> keys = mKeyboardView.getKeyboard().getKeys();
+
+                int[] keycode = {108,2011,1,110,2012,6,115,2013,11,120,2014,16,125,2015,21};
+
+                for (int value : keycode)
+                {
+                    if (value == keyCode)
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }
+
+                // closing on spine when clicked outside
+                if(flag == 1)
+                {
+                    for (Key key1 : keys)
+                    {
+                        int code = key1.codes[0];
+
+                        if (code == keyCode)
+                        {
+                            String label;
+
+                            if (key1.label != null)
+                            {
+                                label = key1.label.toString();
+
+                                convertToDynamic(label);
+
+                                changeLayout("default");
+                                DigitalKeyboard obj1 = new DigitalKeyboard();
+
+                                obj1.setKey("hindi");
+
+                                //if(SetKeys.getA() == 1)
+                                commitText(key1.label.toString());
+
+                                stack[++top] = keyCode;
+                                System.out.println("top1"+top+" "+key1.label.toString());
+
+                                showPreview(keyCode, key1.label.toString());
+                                //flag1 =1;
+                            }
+
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    flag1 = 1;
+                    changeLayout("default");
+                }
+
+                isSpinePressed = false;
+            }
+
+            if(SetKeys.getA() == 0 && (keyCode == 2011 || keyCode == 2012 || keyCode == 2013 || keyCode == 2014 || keyCode == 2015))
+            {
+                isSpinePressed = true;
+
+                changeLayout("default");
+
+                // opening spine drawer
+
+                int[] keycode = {108,2011,1,110,2012,6,115,2013,11,120,2014,16,125,2015,21};
+                String[] labels = {"ह","क़","ग़","य","श","य़","र","ष","ऱ","ल","स","ज़","व","फ़","व़"};
+
+                List<Key> keys = mKeyboardView.getKeyboard().getKeys();
+                for(Key key1 : keys)
+                {
+                    int code = key1.codes[0];
+
+                    for(int i = 0; i < 15; i++)
+                    {
+                        if (code == keycode[i])
+                        {
+                            System.out.print(key1.label);
+
+                           // key1.icon = SetKeys.getContext().getDrawable(R.drawable.shift);
+                            key1.label = labels[i];
+                        }
+                    }
+                }
+
+               // if (tempKey.showIcon)
+               /* {
+                    int id = getDrawableId(tempKey.icon);
+                    if (id != 0)
+                    {
+                        key.icon = getApplicationContext().getDrawable(id);
+                        key.label = null;
+                        Log.d("Location", "set icon " + key.icon);
+                    }
+                }*/
+
+                mKeyboardView.invalidateAllKeys();
+            }
+            else
+            {
+                key = mKeys.get(keyCode);
+
+                if(flag == 0 && flag1 == 0)
+                    showPreview(keyCode, key.label);
+
+                /*if(isSpinePressed)
+                {
+                    convertToDynamic(key.label);
+                }*/
+            }
+
+            System.out.println(key.label);
+            System.out.println("onPress2");
         }
 
         if (showBox)
@@ -264,6 +393,14 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
             key.icon = "xy12";
         }
     }
+
+   /* public int getDrawableId(String drawable)
+    {
+        int resourceId = 0;
+        resourceId = getApplicationContext().getResources().getIdentifier(drawable, "drawable", getPackageName());
+        Log.d("Location", "R id " + resourceId);
+        return resourceId;
+    }*/
 
     @Override
     public void onRelease(int keyCode)
@@ -302,16 +439,54 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
             else
             {
                 removeHalantMode();
+              //  commitText(text);
             }
             removeChakra();
         }
+
+        String temp = "";
+
+        System.out.println("weeeee");
 
         if (mKeys.containsKey(keyCode))
         {
             KeyProperties key = mKeys.get(keyCode);
 
+            System.out.println("dff"+keyCode);
+
+            if(SetKeys.getA() == 1)
+            {
+                commitText(key.label);
+                stack[++top] = keyCode;
+                System.out.println("top2"+top+" "+key.label);
+            }
+
+            if(SetKeys.getA() == 1)
+            {
+                if(keyCode == 30 || keyCode == 31 || keyCode == 53 || keyCode == 52 || (keyCode >= 107 && keyCode <=135))
+                {
+                    backspace();
+                    backspace();
+                  //  top--;
+                  //  top--;
+
+                }
+
+                if(keyCode == 107 || keyCode == 108 || keyCode == 109 || keyCode == 52 || keyCode == 53)
+                {
+                    backspace();
+                   // top--;
+                }
+            }
+
             if(key.changeLayout)
                 changeLayout(key.layout);
+            else
+                ShowDynamiconEditText(keyCode);
+
+
+
+            temp = key.label;
         }
         else
         {
@@ -320,6 +495,27 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
            // removeHalantMode();
 
             KeyProperties key = mKeys.get(keyCode);
+
+           /* if(keyCode == SYMBOLS)
+            {
+                System.out.print("lllll");
+                convertToDynamic(temp);
+            }*/
+        }
+
+        if(keyCode == 405)
+        {
+            changeLayout("emoji");
+        }
+
+        if((keyCode >= 136 && keyCode <= 150) || (keyCode >= 174 && keyCode <= 199) || (keyCode >= 206 && keyCode <= 219))
+        {
+            KeyProperties key = mKeys.get(keyCode);
+
+            commitText(key.label);
+            stack[++top] = keyCode;
+            System.out.println("top3"+top+" "+key.label);
+
         }
 
         removePreview();
@@ -332,6 +528,102 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
 
         if (selection == null)
             mInputConnection.deleteSurroundingText(1, 0);
+    }
+
+    void ShowDynamiconEditText(int keyCode)
+    {
+        KeyProperties key = mKeys.get(keyCode);
+        String[] a = SetKeys.getX();
+
+        // show 12 vowels on edittext of particular
+
+        int[] keycode = {109,31,110,111,125,   126,112,113,127,  128,107,108,30,114,129,130,131,132,133,53,52,134,135};
+
+       // commitText(key.label);
+
+        System.out.println("amd");
+
+        if(SetKeys.getA() == 1)
+        {
+            for(int i=0 ; i < keycode.length; i++)
+            {
+                if(keyCode == keycode[i])
+                {
+                    //backspace();
+                    commitText(a[i]);
+
+                   // stack[++top] = keyCode;
+                   // System.out.println("top"+top+" "+a[i]);
+                    break;
+                }
+            }
+
+            //  backspace();
+            //  backspace();
+
+            if(keyCode == 30 || keyCode == 31 || keyCode == 52 || keyCode == 53 || (keyCode >= 107 && keyCode <=135))
+                 changeLayout("default");
+            SetKeys.setA(0);
+        }
+        else
+        {
+          //  backspace();
+            commitText(key.label);
+
+            if(!(keyCode >= 2011 && keyCode <= 2015))
+                stack[++top] = keyCode;
+            System.out.println("top4"+top+" "+key.label);
+        }
+
+        System.out.println("xddd"+key.label);
+
+        removePreview();
+    }
+
+    void changeToDynamicOfConstant(int keyCode)        // change to dynamic of constant
+    {
+        KeyProperties key = mKeys.get(keyCode);
+
+        System.out.println("yooo"+keyCode+" "+key.label);
+
+        if(keyCode >= 1 && keyCode <=25)
+        {
+            clicked = keyCode;
+
+            String[] a = new String[23];
+
+            a[0] = key.label + "्";             a[8] = key.label + "ो";             a[16] = key.label + "़";
+            a[1] = key.label + "ा";            a[9] = key.label + "ौ";             a[17] = key.label + "ॄ";
+            a[2] = key.label + "ि";            a[10] = key.label + "ं";             a[18] = key.label + "ृ";
+            a[3] = key.label + "ी";            a[11] = key.label + "ः";            a[19] = "र" + "्" + key.label;
+            a[4] = key.label + "ु";             a[12] = key.label;                  a[20] = key.label + "्" + "र";
+            a[5] = key.label + "ू";             a[13] = key.label + "ॅ";            a[21] = key.label + "ॣ";
+            a[6] = key.label + "े";             a[14] = key.label + "ॉ";            a[22] = key.label + "ॢ";
+            a[7] = key.label + "ै";             a[15] = key.label + "ँ";
+
+            SetKeys.setX(a);
+            SetKeys.setA(1);
+
+            DigitalKeyboard obj = new DigitalKeyboard();
+            obj.setKey("hindi");
+        }
+    }
+
+    void convertToDynamic(String label)     // converting to dynamic of spine
+    {
+        String[] x = new String[23];
+
+       // int[] keycode = {109,31,110,111,125,126,   112,113,127,128,107,  108,30,114,129,130,  131,132,133,53,52,  134,135};
+
+        x[0] = label + "्";         x[1] = label + "ा";         x[2] = label+"ि";             x[3] = label + "ी";
+        x[4] = label + "ु";         x[5] = label + "ू";          x[6] = label + "े";            x[7] = label + "ै";
+        x[8] = label + "ो";        x[9] = label + "ौ";         x[10] = label + "ं";           x[11] = label + "ः";
+        x[12] = label ;             x[13] = label + "ॅ";        x[14] = label + "ॉ";           x[15] = label + "";
+        x[16] = label + "";        x[17] = label + "";        x[18] = label + "";             x[19] = label + "";
+        x[20] = label + "";        x[21] = label + "";        x[22] = label + "";
+
+        SetKeys.setX(x);
+        SetKeys.setA(1);
     }
 
     private void handleException(int keyCode)
@@ -385,9 +677,9 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
      *
      * @param layout name string of the layout resource
      */
-    private void changeLanguage()
+    private void changeLanguage(String lang)
     {
-        mSoftKeyboard.changeLanguage();
+        mSoftKeyboard.changeLanguage(lang);
     }
 
     /**
@@ -426,11 +718,35 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
             if(selection == null)
                 mInputConnection.deleteSurroundingText(1, 0);
 
-           // CharSequence selection1 = mInputConnection.getSelectedText(2);
+            System.out.println("top"+top);
+            top--;
+            //top--;
 
-           // System.out.println("charsequence"+selection1);
 
-           // changeLayout("default");
+            if(top >= 0)
+            {
+                int x = stack[top];
+                System.out.println("topoutput"+x);
+
+                for(int i=0;i<stack.length;i++)
+                {
+                    KeyProperties key1 = mKeys.get(stack[i]);
+
+                    System.out.println("allstack " + key1.label);
+                }
+
+                if(stack[top+1] >= 1 && stack[top+1] <= 25 || (stack[top+1] >= 2011 && stack[top+1] <= 2015))
+                    changeLayout("default");
+                else
+                    changeToDynamicOfConstant(x);
+
+
+            }
+            else
+            {
+                top = -1;
+                changeLayout("default");
+            }
         }
         else if(keyCode == SPACE)
         {
@@ -441,6 +757,9 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
             }
 
             changeLayout("default");
+
+            for(int i=0;i<stack.length;i++)
+                System.out.println("space "+stack[i]);
         }
         else if (keyCode == SYMBOLS)
         {
@@ -473,6 +792,12 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
                 System.out.println(" not insymbolmode");
                 inSymbolMode = !(inSymbolMode);
                 changeLayout("symbols");
+
+                if(SetKeys.getA() == 1)
+                {
+                    DigitalKeyboard obj = new DigitalKeyboard();
+                    obj.SetShiftKey(clicked);
+                }
             }
 
            // assert key != null;
@@ -489,7 +814,7 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
             final int checkedItem = -1; //this will checked the item when user open the dialog
 
             // Get the layout inflater
-            LayoutInflater inflater = (SetKeys.getContext()).getLayoutInflater();
+          //  LayoutInflater inflater = (SetKeys.getContext()).getLayoutInflater();
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout
 
@@ -506,7 +831,9 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
                    // selecteditem = which;
 
                     if(which == 0)
-                        changeLanguage();
+                        changeLanguage("english");
+                    else if(which == 1)
+                        changeLanguage("main");
 
                     dialog.dismiss();
                 }
@@ -529,6 +856,9 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
         }
         else if (keyCode == ENTER)
             handleEnter();
+
+
+
     }
 
     private void handleEnter()
@@ -627,11 +957,11 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
     public void swipeUp() {// TODO Auto-generated method stub
     }
 
-    @Override
+   /* @Override
     public boolean onTouch(View view, MotionEvent me)
     {
         // TODO Auto-generated method stub
-        EmojiKeyboardView mKeyboardView = (EmojiKeyboardView) view;
+        MasterKeyboardView mKeyboardView = (MasterKeyboardView) view;
         int action = me.getAction();
         if (action == MotionEvent.ACTION_DOWN)
         {
@@ -654,7 +984,7 @@ public class EmojiKeyboardActionListener implements OnKeyboardActionListener, On
             mSwaraChakra.desetArc();
 
         return mKeyboardView.onTouchEvent(me);
-    }
+    }*/
 
     private void handleMove(int x, int y)
     {
