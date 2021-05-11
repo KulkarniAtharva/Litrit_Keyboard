@@ -197,7 +197,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
     public void onLongPress(Key key)
     {
-       // showPreview(key.codes[0],"a");
+        showPreview(key.codes[0],"a");
 
 
         if (key.codes[0] == SHIFT)
