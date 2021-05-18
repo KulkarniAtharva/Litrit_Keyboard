@@ -289,7 +289,7 @@ public class HindiLanguage extends Language
         myKey0.showCustomBox = false ;
         myKey0.customBoxLayout = new String[] {} ;
         myKey0.showIcon = true ;
-       // myKey0.icon = "letter_01_07_consonant_k";
+        myKey0.icon = "letter_01_07_consonant_k";
         myKey0.changeLayout = true ;
         myKey0.layout = "";
         myKey.set(0, myKey0);

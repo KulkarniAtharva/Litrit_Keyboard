@@ -77,6 +77,7 @@ public class HindiKeyboardActionListener implements OnKeyboardActionListener
 
     int stack[] = new int[1000]; // Maximum size of Stack
     int top;
+    boolean isEmoji = false;
 
     static Handler mHandler = new Handler()
     {
@@ -366,7 +367,7 @@ public class HindiKeyboardActionListener implements OnKeyboardActionListener
             {
                 key = mKeys.get(keyCode);
 
-                if(flag == 0 && flag1 == 0)
+                if(flag == 0 && flag1 == 0 && !isEmoji)
                     showPreview(keyCode, key.label);
 
                 /*if(isSpinePressed)
@@ -505,7 +506,16 @@ public class HindiKeyboardActionListener implements OnKeyboardActionListener
 
         if(keyCode == 405)
         {
-            changeLayout("emoji");
+            if(isEmoji)
+            {
+                changeLayout("default");
+                isEmoji = false;
+            }
+            else
+            {
+                changeLayout("emoji");
+                isEmoji = true;
+            }
         }
 
         if((keyCode >= 136 && keyCode <= 150) || (keyCode >= 174 && keyCode <= 199) || (keyCode >= 206 && keyCode <= 219))
@@ -741,6 +751,8 @@ public class HindiKeyboardActionListener implements OnKeyboardActionListener
                     changeToDynamicOfConstant(x);
 
 
+
+
             }
             else
             {
@@ -796,7 +808,7 @@ public class HindiKeyboardActionListener implements OnKeyboardActionListener
                 if(SetKeys.getA() == 1)
                 {
                     DigitalKeyboard obj = new DigitalKeyboard();
-                    obj.SetShiftKey(clicked);
+                    obj.SetShiftKey(clicked,"hindi");
                 }
             }
 
@@ -811,7 +823,7 @@ public class HindiKeyboardActionListener implements OnKeyboardActionListener
             builder.setTitle("Change Language");
             builder.setIcon(R.drawable.language);
 
-            final int checkedItem = -1; //this will checked the item when user open the dialog
+            final int checkedItem = 2; //this will checked the item when user open the dialog
 
             // Get the layout inflater
           //  LayoutInflater inflater = (SetKeys.getContext()).getLayoutInflater();

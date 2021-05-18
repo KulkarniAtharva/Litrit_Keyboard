@@ -534,7 +534,7 @@ public class EnglishKeyboardActionListener implements OnKeyboardActionListener, 
             builder.setTitle("Change Language");
             builder.setIcon(R.drawable.language);
 
-            final int checkedItem = -1; //this will checked the item when user open the dialog
+            final int checkedItem = 0; //this will checked the item when user open the dialog
 
             builder.setSingleChoiceItems(listItems, checkedItem, new DialogInterface.OnClickListener()
             {

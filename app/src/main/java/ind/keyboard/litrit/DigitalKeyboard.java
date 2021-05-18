@@ -336,11 +336,20 @@ public class DigitalKeyboard extends InputMethodService
         mKeyboardView.invalidateAllKeys();
     }
 
-    public void SetShiftKey(int keyCode)
+    public void SetShiftKey(int keyCode, String lang)
     {
-        marathiLanguage = new MarathiLanguage();
-        marathiKeys = marathiLanguage.hashThis();
-        mKeys = marathiKeys;
+        if(lang == "main")
+        {
+            marathiLanguage = new MarathiLanguage();
+            marathiKeys = marathiLanguage.hashThis();
+            mKeys = marathiKeys;
+        }
+        else if(lang == "hindi")
+        {
+            hindiLanguage = new HindiLanguage();
+            hindiKeys = hindiLanguage.hashThis();
+            mKeys = hindiKeys;
+        }
 
         for(Key key : keys)
         {
@@ -370,8 +379,10 @@ public class DigitalKeyboard extends InputMethodService
             }
         }
 
-
-        mKeyboardView = (MasterKeyboardView) layout.findViewById(R.id.keyboard);
+        if(lang == "main")
+            mKeyboardView = (MasterKeyboardView) layout.findViewById(R.id.keyboard);
+        else if(lang == "hindi")
+            mKeyboardView = (HindiKeyboardView) layout.findViewById(R.id.keyboard);
         mKeyboardView.invalidateAllKeys();
     }
 

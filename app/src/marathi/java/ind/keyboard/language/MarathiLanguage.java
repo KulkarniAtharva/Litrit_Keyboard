@@ -1897,7 +1897,7 @@ public class MarathiLanguage extends Language
         myKey.set(134, myKey134);
 
         KeyProperties myKey135 = new KeyProperties(); //
-        myKey135.code = 136;
+        myKey135.code = 1136;
         myKey135.label = "\u0924\u094D\u0930" ;
         myKey135.showBox = false ;
         myKey135.showCustomBox = false ;
