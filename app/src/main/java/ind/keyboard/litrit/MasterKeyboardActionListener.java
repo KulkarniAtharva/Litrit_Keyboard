@@ -329,7 +329,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
                                 System.out.println("top1111"+top+" "+key1.label.toString());
 
-                                if(!((stackint[top+1] >= 136 && stackint[top+1] <= 150) || (stackint[top+1] >= 174 && stackint[top+1] <= 119) || (stackint[top+1] >= 206 && stackint[top+1] <= 219)))
+                                if(!((keyCode >= 136 && keyCode <= 150) || (keyCode >= 174 && keyCode <= 119) || (keyCode >= 206 && keyCode <= 219)))
                                     showPreview(keyCode, key1.label.toString());
                                 //flag1 =1;
                             }
@@ -377,17 +377,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                     }
                 }
 
-               // if (tempKey.showIcon)
-               /* {
-                    int id = getDrawableId(tempKey.icon);
-                    if (id != 0)
-                    {
-                        key.icon = getApplicationContext().getDrawable(id);
-                        key.label = null;
-                        Log.d("Location", "set icon " + key.icon);
-                    }
-                }*/
-
                 mKeyboardView.invalidateAllKeys();
             }
             else
@@ -396,11 +385,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
                 if(flag == 0 && flag1 == 0 && !isEmoji)
                     showPreview(keyCode, key.label);
-
-                /*if(isSpinePressed)
-                {
-                    convertToDynamic(key.label);
-                }*/
             }
 
             System.out.println(key.label);
@@ -414,14 +398,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             showBoxAt(touchDownX, touchDownY);
         }
     }
-
-   /* public int getDrawableId(String drawable)
-    {
-        int resourceId = 0;
-        resourceId = getApplicationContext().getResources().getIdentifier(drawable, "drawable", getPackageName());
-        Log.d("Location", "R id " + resourceId);
-        return resourceId;
-    }*/
 
     @Override
     public void onRelease(int keyCode)
@@ -465,8 +441,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             removeChakra();
         }
 
-        String temp = "";
-
         if (mKeys.containsKey(keyCode))
         {
             KeyProperties key = mKeys.get(keyCode);
@@ -489,8 +463,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 }*/
                 else
                     stackpos[top] = 0;
-
-
 
                 System.out.println("top2"+top+" "+key.label);
             }
@@ -517,10 +489,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 changeLayout(key.layout);
             else
                 ShowDynamiconEditText(keyCode);
-
-
-
-            temp = key.label;
         }
         else
         {
@@ -792,6 +760,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 else
                     changeToDynamicOfConstant(x,stack[top+2]);
 
+                // backspace one more for emoji
                 if((stackint[top+1] >= 136 && stackint[top+1] <= 150) || (stackint[top+1] >= 174 && stackint[top+1] <= 119) || (stackint[top+1] >= 206 && stackint[top+1] <= 219))
                     backspace();
             }
@@ -816,7 +785,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
         }
         else if (keyCode == SYMBOLS)
         {
-            List<Key> keys = mKeyboardView.getKeyboard().getKeys();
+          //  List<Key> keys = mKeyboardView.getKeyboard().getKeys();
 
             System.out.println("sym");
             if (inSymbolMode)
