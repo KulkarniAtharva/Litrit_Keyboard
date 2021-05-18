@@ -336,7 +336,7 @@ public class DigitalKeyboard extends InputMethodService
         mKeyboardView.invalidateAllKeys();
     }
 
-    public void SetShiftKey(int keyCode, String lang)
+    public void SetShiftKey(String label, String lang)
     {
         if(lang == "main")
         {
@@ -356,26 +356,26 @@ public class DigitalKeyboard extends InputMethodService
             // key.label = SetKeys.getX();
             if (mKeys.containsKey(key.codes[0]))
             {
-                KeyProperties tempKey = mKeys.get(key.codes[0]);
+             //   KeyProperties tempKey = mKeys.get(key.codes[0]);
 
-                KeyProperties key1 = mKeys.get(keyCode);
+              //  KeyProperties key1 = mKeys.get(keyCode);
 
                 if (key.codes[0] == 130)
-                    key.label = key1.label + "ँ";
+                    key.label = label + "ँ";
                 if (key.codes[0] == 131)
-                    key.label = key1.label + "़";
+                    key.label = label + "़";
                 if (key.codes[0] == 132)
-                    key.label = key1.label + "ॄ";
+                    key.label = label + "ॄ";
                 if (key.codes[0] == 133)
-                    key.label = key1.label + "ृ";
+                    key.label = label + "ृ";
                 if (key.codes[0] == 53)
-                    key.label = "र"+"्"+key1.label;
+                    key.label = "र"+"्" + label;
                 if (key.codes[0] == 52)
-                    key.label = key1.label+"्"+"र";
+                    key.label = label+"्"+"र";
                 if (key.codes[0] == 134)
-                    key.label = key1.label + "ॣ";
+                    key.label = label + "ॣ";
                 if (key.codes[0] == 135)
-                    key.label = key1.label + "ॢ";
+                    key.label = label + "ॢ";
             }
         }
 

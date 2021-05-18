@@ -57,6 +57,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
     private int ENGLISH;
     private int SYMBOLS;
     private int SHIFT;
+    private int FULLSTOP;
     private int MOVE_THRESHOLD = 0;
     private int DIM_THRESHOLD = 0;
     private InputConnection mInputConnection;
@@ -70,7 +71,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
     private static HashMap<Integer, Key> mKeyboardKeys;
     private boolean isSpinePressed;
     int selecteditem = -1;
-    static int clicked;
+    static String clicked;
     boolean isEmoji = false;
 
     String[] stack = new String[1000]; // Maximum size of Stack
@@ -116,6 +117,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
         ENGLISH = mKeyboardView.ENGLISH;
         SYMBOLS = mKeyboardView.SYMBOLS;
         SHIFT = mKeyboardView.SHIFT;
+        FULLSTOP = 41;
 
         initVariables();
         MOVE_THRESHOLD = (int) mSwaraChakra.getInnerRadius();
@@ -260,7 +262,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             if(keyCode >= 1 && keyCode <=25)
             {
 
-                clicked = keyCode;
+                clicked = key.label;
 
                 String[] a = new String[23];
 
@@ -312,6 +314,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                             if (key1.label != null)
                             {
                                 label = key1.label.toString();
+
+                                clicked = label;
 
                                 convertToDynamic(label);
 
@@ -813,6 +817,11 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
            // assert key != null;
             //convertToDynamic(key.label);
         }
+       /* else if(keyCode == FULLSTOP)
+        {
+            commitText(".");
+            showPreview(keyCode,".");
+        }*/
         else if (keyCode == ENGLISH)
         {
             String[] listItems = {"English", "Marathi", "Hindi"};

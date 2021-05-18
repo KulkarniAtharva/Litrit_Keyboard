@@ -193,7 +193,10 @@
             android:keyIcon="@drawable/space"
             android:keyWidth="48%p" />
 
-        <Key android:codes="41" android:keyWidth="10%p" />
+        <Key
+            android:codes="41"
+            android:keyWidth="10%p"
+            android:keyIcon="@drawable/punctuate"/>
 
         <Key
             android:codes="@string/enter"

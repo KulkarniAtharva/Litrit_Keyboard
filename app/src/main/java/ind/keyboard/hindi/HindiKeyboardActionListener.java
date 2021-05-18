@@ -808,7 +808,7 @@ public class HindiKeyboardActionListener implements OnKeyboardActionListener
                 if(SetKeys.getA() == 1)
                 {
                     DigitalKeyboard obj = new DigitalKeyboard();
-                    obj.SetShiftKey(clicked,"hindi");
+                   // obj.SetShiftKey(clicked,"hindi");
                 }
             }
 
