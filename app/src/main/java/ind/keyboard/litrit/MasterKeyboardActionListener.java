@@ -261,7 +261,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
             // making the consonants dynamic
             if(keyCode >= 1 && keyCode <=25)
             {
-
                 clicked = key.label;
 
                 String[] a = new String[23];
@@ -333,8 +332,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
                                 System.out.println("top1111"+top+" "+key1.label.toString());
 
-                                if(!((keyCode >= 136 && keyCode <= 150) || (keyCode >= 174 && keyCode <= 119) || (keyCode >= 206 && keyCode <= 219)))
-                                    showPreview(keyCode, key1.label.toString());
+                               // if(!((keyCode >= 136 && keyCode <= 150) || (keyCode >= 174 && keyCode <= 119) || (keyCode >= 206 && keyCode <= 219)))
+                                //    showPreview(keyCode, key1.label.toString());
                                 //flag1 =1;
                             }
 
@@ -539,7 +538,7 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
         }
 
-        removePreview();
+       // removePreview();
     }
 
     void backspace()
@@ -572,6 +571,8 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 {
                     //backspace();
                     commitText(a[i]);
+
+                    showPreview(keyCode,a[i]);
 
                    // stack[++top] = keyCode;
                    // System.out.println("top"+top+" "+a[i]);
@@ -748,7 +749,12 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
 
             if(top >= 0)
             {
-                String x = stack[top];
+                String x = "";
+                if(top >= 2)
+                    x = stack[top-2];
+               // else
+                //    x = stack[top];
+
                 System.out.println("topoutput"+x+" "+stackpos[top]);
 
                 for(int i=0;i<stack.length;i++)
@@ -759,10 +765,17 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 }
 
                 //if(stack[top+1] >= 1 && stack[top+1] <= 25 || (stack[top+1] >= 2011 && stack[top+1] <= 2015))
+
+
                 if(stackpos[top] == 0)
                     changeLayout("default");
                 else
-                    changeToDynamicOfConstant(x,stack[top+2]);
+                {
+                    if(top >= 2)
+                        changeToDynamicOfConstant(x, stack[top-2]);
+                    else
+                        changeToDynamicOfConstant(x, stack[top]);
+                }
 
                 // backspace one more for emoji
                 if((stackint[top+1] >= 136 && stackint[top+1] <= 150) || (stackint[top+1] >= 174 && stackint[top+1] <= 119) || (stackint[top+1] >= 206 && stackint[top+1] <= 219))
@@ -814,7 +827,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
                 }
             }
 
-           // assert key != null;
             //convertToDynamic(key.label);
         }
        /* else if(keyCode == FULLSTOP)
@@ -875,9 +887,6 @@ public class MasterKeyboardActionListener implements OnKeyboardActionListener, O
         }
         else if (keyCode == ENTER)
             handleEnter();
-
-
-
     }
 
     private void handleEnter()

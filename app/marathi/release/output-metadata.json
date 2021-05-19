@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "ind.keyboard.litrit",
-  "variantName": "processMarathiReleaseResources",
+  "variantName": "marathiRelease",
   "elements": [
     {
       "type": "SINGLE",
