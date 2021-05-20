@@ -1,6 +1,6 @@
 # ⌨️ Litrit Keyboard  📱
 
-A Multilingual Soft Keyboard Android application 
+A Multilingual Soft Keyboard Android application which used Stack Data Stucture
 
 
 Soon going to be live on Google PlayStore
