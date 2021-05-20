@@ -21,3 +21,6 @@ Soon going to be live on Google PlayStore
 - Landscape Mode
 - Cursor Scrubber
 - Scripts
+
+
+## Screenshots
