@@ -1,4 +1,4 @@
-# ⌨️ Litrit Keyboard  📱
+# ⌨️ Litrit Keyboard  📱 
 
 A Multilingual Soft Keyboard Android application which used Stack Data Stucture
 
